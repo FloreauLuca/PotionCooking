@@ -17,7 +17,7 @@ public class GameManager : MonoBehaviour
     private WindowType currentWindow;
 
     [SerializeField]private GameObject currentCamera = null;
-
+    public GameObject currentObject = null;
     public int buttonId = 0;
 	// Use this for initialization
 	void Start () {
@@ -64,7 +64,7 @@ public class GameManager : MonoBehaviour
 
     public void Switch()
     {
-        Debug.Log("Switch");
+        //Debug.Log("Switch");
         switch (currentWindow)
         {
             case WindowType.HOME:
@@ -95,7 +95,7 @@ public class GameManager : MonoBehaviour
     }
     public void SwitchDown()
     {
-        Debug.Log("SwitchDown");
+        //Debug.Log("SwitchDown");
         switch (currentWindow)
         {
             case WindowType.INGREDIENT:
