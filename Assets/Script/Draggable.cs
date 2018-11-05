@@ -34,6 +34,5 @@ public class Draggable : MonoBehaviour
     private void OnMouseUp()
     {
         
-        gameManager.GetComponent<GameManager>().currentObject = null;
     }
 }
