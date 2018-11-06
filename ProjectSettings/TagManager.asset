@@ -10,6 +10,7 @@ TagManager:
   - Laddle
   - Cup
   - Customer
+  - Table
   layers:
   - Default
   - TransparentFX
