@@ -17,8 +17,7 @@ public class GameManager : MonoBehaviour
     private WindowType currentWindow;
 
     [SerializeField]private GameObject currentCamera = null;
-    public GameObject currentObject = null;
-    public int buttonId = 0;
+    private int UiButtonId = 0;
 	// Use this for initialization
 	void Start () {
 
@@ -33,32 +32,32 @@ public class GameManager : MonoBehaviour
 	        Switch();
 	    }
 
-	    if (Input.GetButtonDown("First") || buttonId==1)
+	    if (Input.GetButtonDown("First") || UiButtonId==1)
 	    {
 	        currentWindow = WindowType.HOME;
 	        currentCamera.transform.position = new Vector3(17.5f, 0f, -10f);
-	        buttonId = 0;
+	        UiButtonId = 0;
         }
 
-	    if (Input.GetButtonDown("Second") || buttonId == 2)
+	    if (Input.GetButtonDown("Second") || UiButtonId == 2)
 	    {
 	        currentWindow = WindowType.INGREDIENT;
 	        currentCamera.transform.position = new Vector3(0f, 0f, -10f);
-	        buttonId = 0;
+	        UiButtonId = 0;
         }
 
-	    if (Input.GetButtonDown("Third") || buttonId == 3)
+	    if (Input.GetButtonDown("Third") || UiButtonId == 3)
 	    {
 	        currentWindow = WindowType.BAKING;
 	        currentCamera.transform.position = new Vector3(5.75f, 0f, -10f);
-	        buttonId = 0;
+	        UiButtonId = 0;
         }
 
-	    if (Input.GetButtonDown("Four") || buttonId == 4)
+	    if (Input.GetButtonDown("Four") || UiButtonId == 4)
 	    {
 	        currentWindow = WindowType.PRESENTATION;
 	        currentCamera.transform.position = new Vector3(11.5f, 0f, -10f);
-	        buttonId = 0;
+	        UiButtonId = 0;
 	    }
     }
 
@@ -125,8 +124,8 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public void ButtonDown(int buttonId)
+    public void UIButtonDown(int UIbutton)
     {
-        this.buttonId = buttonId;
+        UiButtonId = UIbutton;
     }
 }

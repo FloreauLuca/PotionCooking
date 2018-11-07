@@ -16,12 +16,11 @@ public class Laddle : Draggable
 
     void OnMouseDown()
     {
-        objectType = cauldronContainer.currentContainObjectType;
+        ObjectType = cauldronContainer.CurrentContainObjectType;
     }
 
     public override void Drop()
     {
         transform.position = starTransform;
-        cauldronContainer.currentContainObjectType = objectType ;
     }
 }

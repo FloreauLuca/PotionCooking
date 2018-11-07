@@ -6,11 +6,8 @@ using UnityEngine.UI;
 
 public class Draggable : MonoBehaviour
 {
-    private GameObject gameManager;
 
-    public List<Sprite> objectType;
-
-    [SerializeField] private float raycastRadius = 0.25f;
+    [SerializeField] private List<Sprite> objectType;
 
     [SerializeField] private LayerMask raycastLayerMask;
     protected string containerType;
@@ -22,9 +19,14 @@ public class Draggable : MonoBehaviour
 
     private bool table;
     // Use this for initialization
+
+    public List<Sprite> ObjectType
+    {
+        get { return objectType; }
+        set { objectType = value; }
+    }
     protected virtual void Start ()
     {
-        gameManager = GameObject.FindGameObjectWithTag("GameManager");
 
         starTransform = GetComponent<Transform>().position;
         container = GetComponent<Container>();
@@ -37,7 +39,7 @@ public class Draggable : MonoBehaviour
 	void Update () {
 	    if (container != null)
 	    {
-	        objectType = container.currentContainObjectType;
+	        objectType = container.CurrentContainObjectType;
 	    }
 
 	    if (dragging)
@@ -90,10 +92,7 @@ public class Draggable : MonoBehaviour
     {
         dragging = true;
     }
-    
 
-    public virtual void Drop()
-    {
 
-    }
+    public virtual void Drop() { }
 }
