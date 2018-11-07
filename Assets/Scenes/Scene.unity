@@ -2522,7 +2522,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1330406645}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Table
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2912,11 +2912,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 92b489ed43878b04da16e23fea151e89, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectType: []
+  objectType:
+  - {fileID: 21300000, guid: 7b86612a897c4254ca80cc475547b5a0, type: 3}
   raycastRadius: 0.25
   raycastLayerMask:
     serializedVersion: 2
-    m_Bits: 512
+    m_Bits: 1536
 --- !u!1 &1502318454
 GameObject:
   m_ObjectHideFlags: 0
@@ -3289,11 +3290,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 92b489ed43878b04da16e23fea151e89, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectType: []
+  objectType:
+  - {fileID: 21300000, guid: 8fd0a5c85894e294e88c6aa27310674f, type: 3}
   raycastRadius: 0.25
   raycastLayerMask:
     serializedVersion: 2
-    m_Bits: 512
+    m_Bits: 1536
 --- !u!1 &1586310887
 GameObject:
   m_ObjectHideFlags: 0
@@ -4929,7 +4931,7 @@ GameObject:
   - component: {fileID: 2098601387}
   m_Layer: 9
   m_Name: Ladle
-  m_TagString: Untagged
+  m_TagString: Laddle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4988,7 +4990,7 @@ MonoBehaviour:
   raycastRadius: 0.25
   raycastLayerMask:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 1024
 --- !u!1 &2135562186
 GameObject:
   m_ObjectHideFlags: 0
