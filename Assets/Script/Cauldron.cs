@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -6,32 +7,36 @@ using UnityEngine.UI;
 
 public class Cauldron : MonoBehaviour
 {
-    public string[] currentContainObjectType = new string[3];
-    private GameObject gameManager;
+    private Sprite[] recipe;
+    private Container container;
+    [SerializeField] private GameObject[] item;
+    private Sprite[] recipes;
 
-    private GameObject dropObject;
-    // Use this for initialization
     void Start ()
     {
-        gameManager = GameObject.FindGameObjectWithTag("GameManager");
+        container = GetComponent<Container>();
     }
 	
 	// Update is called once per frame
 	void Update () {
-		
-	}
+	    if (container.currentContainObjectType.Count == 3)
+	    {
+	        if (container.currentContainObjectType[0].name == "")
+	        {
+                //recipe = new Sprite[1,1];
+	        }
 
-    public void OnMouseOver()
-    {
-        Debug.Log("Debug");
-        if (Input.GetMouseButtonUp(0))
-        {
-            
-            dropObject = gameManager.GetComponent<GameManager>().currentObject;
-            currentContainObjectType.SetValue(dropObject.GetComponent<Draggable>().objectType,currentContainObjectType.GetUpperBound(1)+1);
-            Destroy(dropObject);
+	        container.currentContainObjectType = new List<Sprite>();
+	        for (int i = 0; i < 3; i++)
+	        {
+	            item[i].GetComponentInChildren<SpriteRenderer>().sprite = null;
+	        }
         }
 
-    }
+	    for (int i = 0; i < container.currentContainObjectType.Count; i++)
+	    {
+	        item[i].GetComponentInChildren<SpriteRenderer>().sprite = container.currentContainObjectType[i];
+	    }
+	}
 
 }

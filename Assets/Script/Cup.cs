@@ -9,11 +9,6 @@ public class Cup : Draggable {
 	    base.Start();
         containerType = "Customer";
     }
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
 
     public override void Drop()
     {
