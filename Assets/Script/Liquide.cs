@@ -2,17 +2,17 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Ingredient : Draggable {
-
+public class Liquide : Draggable{
     // Use this for initialization
-    protected override void Start ()
-	{
+    protected override void Start()
+    {
         base.Start();
-	    containerType = "Cauldron";
-	}
-	
+        containerType = "Cauldron";
+    }
+    
+
     public override void Drop()
     {
-        Destroy(gameObject);
+        transform.position = starTransform;
     }
 }
