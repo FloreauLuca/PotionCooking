@@ -363,7 +363,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 90237319}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.1, y: 0, z: -1}
+  m_LocalPosition: {x: -0.1, y: 0, z: 0}
   m_LocalScale: {x: 0.15, y: 0.15, z: 0}
   m_Children:
   - {fileID: 1443560532}
@@ -402,8 +402,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -671751029
-  m_SortingLayer: 2
+  m_SortingLayerID: -2090412219
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 14b8ce5af5ffa1941bcb78d05ea6e984, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -882,8 +882,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 298950802}
-  - component: {fileID: 298950803}
   - component: {fileID: 298950804}
+  - component: {fileID: 298950803}
   m_Layer: 0
   m_Name: UnicornBag
   m_TagString: Untagged
@@ -996,7 +996,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 428174317}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.006, y: 0.029, z: 2}
+  m_LocalPosition: {x: -0.006, y: 0.029, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 0}
   m_Children: []
   m_Father: {fileID: 580707590}
@@ -1034,9 +1034,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -671751029
-  m_SortingLayer: 2
-  m_SortingOrder: 0
+  m_SortingLayerID: -2090412219
+  m_SortingLayer: 3
+  m_SortingOrder: 1
   m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -1221,7 +1221,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 538072920}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.006, y: 0.029, z: 2}
+  m_LocalPosition: {x: -0.006, y: 0.029, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 0}
   m_Children: []
   m_Father: {fileID: 1684158770}
@@ -1259,9 +1259,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -671751029
-  m_SortingLayer: 2
-  m_SortingOrder: 0
+  m_SortingLayerID: -2090412219
+  m_SortingLayer: 3
+  m_SortingOrder: 1
   m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -1371,7 +1371,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 580707589}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.05, z: -1}
+  m_LocalPosition: {x: 0, y: -0.05, z: 0}
   m_LocalScale: {x: 0.15, y: 0.15, z: 0}
   m_Children:
   - {fileID: 428174318}
@@ -1410,8 +1410,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -671751029
-  m_SortingLayer: 2
+  m_SortingLayerID: -2090412219
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 14b8ce5af5ffa1941bcb78d05ea6e984, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -1432,8 +1432,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 693712864}
-  - component: {fileID: 693712865}
   - component: {fileID: 693712866}
+  - component: {fileID: 693712865}
   m_Layer: 0
   m_Name: BonesBag
   m_TagString: Untagged
@@ -2718,7 +2718,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1443560531}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.006, y: 0.029, z: 2}
+  m_LocalPosition: {x: -0.006, y: 0.029, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 0}
   m_Children: []
   m_Father: {fileID: 90237320}
@@ -2756,9 +2756,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -671751029
-  m_SortingLayer: 2
-  m_SortingOrder: 0
+  m_SortingLayerID: -2090412219
+  m_SortingLayer: 3
+  m_SortingOrder: 1
   m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -2912,12 +2912,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 92b489ed43878b04da16e23fea151e89, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectType:
-  - {fileID: 0}
+  objectType: []
   raycastRadius: 0.25
   raycastLayerMask:
     serializedVersion: 2
-    m_Bits: 1024
+    m_Bits: 512
 --- !u!1 &1502318454
 GameObject:
   m_ObjectHideFlags: 0
@@ -3290,12 +3289,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 92b489ed43878b04da16e23fea151e89, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectType:
-  - {fileID: 0}
+  objectType: []
   raycastRadius: 0.25
   raycastLayerMask:
     serializedVersion: 2
-    m_Bits: 1024
+    m_Bits: 512
 --- !u!1 &1586310887
 GameObject:
   m_ObjectHideFlags: 0
@@ -3304,8 +3302,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1586310888}
-  - component: {fileID: 1586310889}
   - component: {fileID: 1586310890}
+  - component: {fileID: 1586310889}
   m_Layer: 0
   m_Name: BatBag
   m_TagString: Untagged
@@ -3725,7 +3723,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1684158769}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.1, y: 0, z: -1}
+  m_LocalPosition: {x: 0.1, y: 0, z: 0}
   m_LocalScale: {x: 0.15, y: 0.15, z: 0}
   m_Children:
   - {fileID: 538072921}
@@ -3764,8 +3762,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -671751029
-  m_SortingLayer: 2
+  m_SortingLayerID: -2090412219
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 14b8ce5af5ffa1941bcb78d05ea6e984, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -4990,7 +4988,7 @@ MonoBehaviour:
   raycastRadius: 0.25
   raycastLayerMask:
     serializedVersion: 2
-    m_Bits: 1024
+    m_Bits: 0
 --- !u!1 &2135562186
 GameObject:
   m_ObjectHideFlags: 0

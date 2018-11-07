@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 61190627671535312}
   - component: {fileID: 114544325593039310}
   m_Layer: 0
-  m_Name: Bone
+  m_Name: Bones
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -108,7 +108,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectType:
-  - {fileID: 0}
+  - {fileID: 21300000, guid: 3b575607cb0e855489cae5e09ec6017c, type: 3}
   raycastRadius: 0.25
   raycastLayerMask:
     serializedVersion: 2

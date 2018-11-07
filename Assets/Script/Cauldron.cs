@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -6,9 +7,10 @@ using UnityEngine.UI;
 
 public class Cauldron : MonoBehaviour
 {
+    private Sprite[] recipe;
     private Container container;
     [SerializeField] private GameObject[] item;
-    [SerializeField] private Sprite[,] recipe;
+    private Sprite[] recipes;
 
     void Start ()
     {
@@ -21,7 +23,7 @@ public class Cauldron : MonoBehaviour
 	    {
 	        if (container.currentContainObjectType[0].name == "")
 	        {
-                recipe = new Sprite[1,1];
+                //recipe = new Sprite[1,1];
 	        }
 
 	        container.currentContainObjectType = new List<Sprite>();

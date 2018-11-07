@@ -19,8 +19,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4130897086632032}
-  - component: {fileID: 114308387886605872}
   - component: {fileID: 61344485115795474}
+  - component: {fileID: 114308387886605872}
   m_Layer: 0
   m_Name: Bat
   m_TagString: Untagged
@@ -108,7 +108,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectType:
-  - {fileID: 0}
+  - {fileID: 21300000, guid: b735d200ac92db34db232693097a5245, type: 3}
   raycastRadius: 0.25
   raycastLayerMask:
     serializedVersion: 2

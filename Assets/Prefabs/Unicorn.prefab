@@ -108,7 +108,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectType:
-  - {fileID: 0}
+  - {fileID: 21300000, guid: fae6db9d62bfb8e4999f6ebea69328c9, type: 3}
   raycastRadius: 0.25
   raycastLayerMask:
     serializedVersion: 2

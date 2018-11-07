@@ -54,3 +54,6 @@ TagManager:
   - name: Object
     uniqueID: 3623216267
     locked: 0
+  - name: Item
+    uniqueID: 2204555077
+    locked: 0
