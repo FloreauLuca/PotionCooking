@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class Recipe : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
+public class RecipeGUI : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
     private Animator animator;
 	// Use this for initialization

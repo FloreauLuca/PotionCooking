@@ -22,5 +22,6 @@ public class Laddle : Draggable
     public override void Drop()
     {
         transform.position = starTransform;
+        cauldronContainer.currentContainObjectType = objectType ;
     }
 }
