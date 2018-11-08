@@ -10,7 +10,7 @@ public class Bag : MonoBehaviour
     private void OnMouseDown()
     {
        spawnObject = Instantiate(objectprefab, transform);
-       spawnObject.GetComponent<Ingredient>().dragging = true;
+       spawnObject.GetComponent<Ingredient>().Dragging = true;
     }
    
 }

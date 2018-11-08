@@ -8,6 +8,7 @@ using UnityEngine.UI;
 
 public class Cauldron : MonoBehaviour
 {
+
     [SerializeField] private RecipeSerializable[] recipeArray;
     private int nbGoodIngredient;
     private int recipeSucessful = 0;
@@ -24,19 +25,19 @@ public class Cauldron : MonoBehaviour
 	    if (container.CurrentContainObjectType.Count == RECIPE_ARRAY_LENGTH)
 	    {
 	        recipeSucessful = -1;
-	        for (int recipeIndex = 0; recipeIndex < 3; recipeIndex++)
+	        for (int recipeIndex = 0; recipeIndex < recipeArray.Length; recipeIndex++)
 	        {
 	            nbGoodIngredient = 0;
-	            for (int recipeIngredientIndex = 0; recipeIngredientIndex < 3; recipeIngredientIndex++)
+	            for (int recipeIngredientIndex = 0; recipeIngredientIndex < recipeArray[recipeIndex].Recipe.Length; recipeIngredientIndex++)
 	            {
 	                /*if (container.CurrentContainObjectType.Contains(recipeArray[recipeIndex].Recipe[recipeIngredientIndex]))
 	                {
 	                    nbGoodIngredient++;
 	                    break;
 	                }*/
-                    for (int k = 0; k < 3; k++)
+                    for (int ingredientIndex = 0; ingredientIndex < container.CurrentContainObjectType.Count; ingredientIndex++)
 	                {
-                        if (container.CurrentContainObjectType[k] == recipeArray[recipeIndex].Recipe[recipeIngredientIndex])
+                        if (container.CurrentContainObjectType[ingredientIndex] == recipeArray[recipeIndex].Recipe[recipeIngredientIndex])
 	                    {
 	                        nbGoodIngredient++;
 	                        break;

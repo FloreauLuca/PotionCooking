@@ -15,11 +15,28 @@ public class Draggable : MonoBehaviour
     private Container container;
     protected Vector2 starTransform;
 
-    [NonSerialized]public bool dragging = false;
+    [NonSerialized]private bool dragging = false;
 
     private bool table;
-    // Use this for initialization
 
+
+
+    [SerializeField] private Sprite potionInvisibility;
+    [SerializeField] private Sprite potionLevitation;
+    [SerializeField] private Sprite potionMetamorphose;
+    private Sprite emptyCup;
+    protected SpriteRenderer spriteRenderer;
+
+
+    private Animator animator;
+
+
+    // Use this for initialization
+    public bool Dragging
+    {
+        get { return dragging; }
+        set { dragging = value; }
+    }
     public List<Sprite> ObjectType
     {
         get { return objectType; }
@@ -28,6 +45,9 @@ public class Draggable : MonoBehaviour
     protected virtual void Start ()
     {
 
+        spriteRenderer = GetComponentInChildren<SpriteRenderer>();
+        animator = GetComponentInChildren<Animator>();
+        emptyCup = spriteRenderer.sprite;
         starTransform = GetComponent<Transform>().position;
         container = GetComponent<Container>();
         box = GetComponent<BoxCollider2D>();
@@ -36,7 +56,7 @@ public class Draggable : MonoBehaviour
     }
     	
 	// Update is called once per frame
-	void Update () {
+	protected virtual void Update () {
 	    if (container != null)
 	    {
 	        objectType = container.CurrentContainObjectType;
@@ -54,6 +74,7 @@ public class Draggable : MonoBehaviour
 
 	    if (Input.GetMouseButtonUp(0) && dragging)
 	    {
+	        bool dropped = false;
 	        dragging = false;
 	        //Debug.Log(transform.position);
 	        Collider2D[] colliders = Physics2D.OverlapBoxAll(transform.position, box.size, 0, raycastLayerMask);
@@ -67,7 +88,8 @@ public class Draggable : MonoBehaviour
 	                {
 	                    //Debug.Log(containerType);
 	                    collider.GetComponent<Container>().OnDropObject(objectType);
-	                    Drop();
+	                    Drop(collider.gameObject);
+	                    dropped = true;
 	                    break;
 	                }
 
@@ -78,9 +100,9 @@ public class Draggable : MonoBehaviour
                 }
             }
 
-	        if (!table)
+	        if (!table && !dropped)
 	        {
-	            Drop();
+	            DropEmpty();
 	        }
 	        else
 	        {
@@ -88,11 +110,36 @@ public class Draggable : MonoBehaviour
 	        }
 	    }
     }
-    public void OnMouseDrag()
+    private void OnMouseDrag()
     {
         dragging = true;
     }
 
 
-    public virtual void Drop() { }
+    public virtual void Drop(GameObject container) { }
+
+    public virtual void DropEmpty() { }
+
+
+
+    public void Fill(Sprite potion)
+    {
+        if (potion.name == "PotionInvisibility")
+        {
+            spriteRenderer.sprite = potionInvisibility;
+        }
+        if (potion.name == "PotionLevitation")
+        {
+            spriteRenderer.sprite = potionLevitation;
+        }
+        if (potion.name == "PotionMetamorphose")
+        {
+            spriteRenderer.sprite = potionMetamorphose;
+        }
+    }
+
+    public void Empty()
+    {
+        spriteRenderer.sprite = emptyCup;
+    }
 }

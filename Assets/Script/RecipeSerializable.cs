@@ -8,7 +8,7 @@ public class RecipeSerializable
 
     [SerializeField] private Sprite potion;
 
-
+    
     public Sprite[] Recipe
     {
         get { return recipe; }
