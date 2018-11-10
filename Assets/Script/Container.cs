@@ -4,14 +4,12 @@ using UnityEngine;
 
 public class Container : MonoBehaviour {
 
-    public List<Sprite> currentContainObjectType;
-    private GameObject gameManager;
+    [SerializeField] private List<Sprite> currentContainObjectType;
 
     // Use this for initialization
     void Start ()
     {
         currentContainObjectType = new List<Sprite>();
-        gameManager = GameObject.FindGameObjectWithTag("GameManager");
     }
 	
 	// Update is called once per frame
@@ -21,7 +19,12 @@ public class Container : MonoBehaviour {
     public void OnDropObject(List<Sprite> objectType)
     {
         currentContainObjectType.AddRange(objectType);
-        Debug.Log("Drop");
+    }
+
+    public List<Sprite> CurrentContainObjectType
+    {
+        get { return currentContainObjectType; }
+        set { currentContainObjectType = value; }
     }
 
 }
