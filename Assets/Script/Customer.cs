@@ -11,10 +11,11 @@ public class Customer : MonoBehaviour
     private GameObject currentRecipe;
     private Container container;
     private GameObject gameManager;
+
     private void Start()
     {
-        container = GetComponent<Container>();
         gameManager = GameObject.FindGameObjectWithTag("GameManager");
+        container = GetComponent<Container>();
     }
 
     private void OnMouseDown()
@@ -28,7 +29,7 @@ public class Customer : MonoBehaviour
 
     public void Reception()
     {
-        if (container.GetComponent<Container>().CurrentContainObjectType[0] == potion.Potion && welcomed)
+        if (container.GetComponent<Container>().CurrentContainObjectType[0] == potion.PotionCauldron && welcomed)
         {
             gameManager.GetComponent<GameManager>().NewCustomer();
             Destroy(currentRecipe);

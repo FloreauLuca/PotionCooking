@@ -15,7 +15,11 @@ MonoBehaviour:
   - {fileID: 21300000, guid: b735d200ac92db34db232693097a5245, type: 3}
   - {fileID: 21300000, guid: 8fd0a5c85894e294e88c6aa27310674f, type: 3}
   - {fileID: 21300000, guid: fae6db9d62bfb8e4999f6ebea69328c9, type: 3}
-  potion: {fileID: 21300000, guid: f93a5204f088d3a42b0e526f308160a4, type: 3}
+  potionCupSprites:
+  - {fileID: 21300000, guid: 4fe638b16bb210b4e8446030244c1989, type: 3}
+  - {fileID: 21300000, guid: 889fb4d986ba0c946941526f41d6dba8, type: 3}
+  - {fileID: 21300000, guid: 070cc76dec39d99498b373655139982d, type: 3}
   potionName: "Potion de L\xE9vitaion"
   panelPrefab: {fileID: 1992916204860972, guid: 73f022542777ab64e8d692b6246cb0ff,
     type: 2}
+  potionCauldron: {fileID: 21300000, guid: 67d2fe9f6616e9a418a443be115c1fc2, type: 3}

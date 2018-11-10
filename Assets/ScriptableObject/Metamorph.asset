@@ -15,7 +15,11 @@ MonoBehaviour:
   - {fileID: 21300000, guid: fae6db9d62bfb8e4999f6ebea69328c9, type: 3}
   - {fileID: 21300000, guid: 8fd0a5c85894e294e88c6aa27310674f, type: 3}
   - {fileID: 21300000, guid: 3b575607cb0e855489cae5e09ec6017c, type: 3}
-  potion: {fileID: 21300000, guid: 26b1d9aeca85a394e96883b08098d164, type: 3}
+  potionCupSprites:
+  - {fileID: 21300000, guid: 99f8395df160cfb4c9ae52249d3bc248, type: 3}
+  - {fileID: 21300000, guid: bc5a70af465db594e93255b233b0b5ae, type: 3}
+  - {fileID: 21300000, guid: b7e5372dac6aa93409d42cd5b19f1956, type: 3}
   potionName: "Potion de M\xE9tamorphose"
   panelPrefab: {fileID: 1090906723534772, guid: 5933210384d52f74b9ad91577a8c94ca,
     type: 2}
+  potionCauldron: {fileID: 21300000, guid: 64acf78de21a3b4488c83009ba4f4d9f, type: 3}

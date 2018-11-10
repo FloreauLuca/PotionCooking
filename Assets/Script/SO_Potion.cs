@@ -7,19 +7,33 @@ public class SO_Potion : ScriptableObject
 {
     [SerializeField] private Sprite[] recipe;
 
-    [SerializeField] private Sprite potion;
+    [SerializeField] private Sprite[] potionCupSprites;
+    private Sprite currentPotionCup;
 
     [SerializeField] private string potionName;
     [SerializeField] private GameObject panelPrefab;
+
+    [SerializeField] private Sprite potionCauldron;
+
+    public Sprite PotionCauldron
+    {
+        get { return potionCauldron; }
+    }
 
     public Sprite[] Recipe
     {
         get { return recipe; }
     }
 
-    public Sprite Potion
+    public Sprite[] PotionCupSprites
     {
-        get { return potion; }
+        get { return potionCupSprites; }
+    }
+
+    public Sprite CurrentPotionCup
+    {
+        get { return currentPotionCup; }
+        set { currentPotionCup = value; }
     }
 
     public string PotionName

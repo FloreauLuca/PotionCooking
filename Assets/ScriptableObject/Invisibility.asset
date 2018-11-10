@@ -15,7 +15,11 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 7b86612a897c4254ca80cc475547b5a0, type: 3}
   - {fileID: 21300000, guid: 3b575607cb0e855489cae5e09ec6017c, type: 3}
   - {fileID: 21300000, guid: 8fd0a5c85894e294e88c6aa27310674f, type: 3}
-  potion: {fileID: 21300000, guid: 89d24e5a0ce330e429f5f563320a7866, type: 3}
+  potionCupSprites:
+  - {fileID: 21300000, guid: 7d87d82f1edca744bb4802c9d6c10199, type: 3}
+  - {fileID: 21300000, guid: dcc3a2524b9294f4ba18a8a8bc5dc5d4, type: 3}
+  - {fileID: 21300000, guid: aef00bd292139e24dad27c2ede270654, type: 3}
   potionName: "Potion d'Invisibilit\xE9"
   panelPrefab: {fileID: 1340855839452064, guid: 30c98e51cae8fff42b3be9e124ea9724,
     type: 2}
+  potionCauldron: {fileID: 21300000, guid: 356b7d207fd369245b1b1b27c088445c, type: 3}

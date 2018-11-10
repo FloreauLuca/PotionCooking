@@ -27,7 +27,7 @@ public class RecipeGUI : MonoBehaviour, IPointerEnterHandler, IPointerExitHandle
 
         ;
 
-        potionItem.GetComponent<Image>().sprite = potion.Potion;
+        potionItem.GetComponent<Image>().sprite = potion.CurrentPotionCup;
         textMesh.GetComponent<TextMeshProUGUI>().text = potion.PotionName;
 
 
