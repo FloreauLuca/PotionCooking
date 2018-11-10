@@ -8,12 +8,13 @@ using UnityEngine.UI;
 
 public class Cauldron : MonoBehaviour
 {
-    [SerializeField] private RecipeJSON[] nbRecipe;
+
+    [SerializeField] private SO_Potion[] recipeArray;
     private int nbGoodIngredient;
-    private int recipeSucessful = 0;
+    private int recipeSucessfulIndex = -1;
     private Container container;
     [SerializeField] private GameObject[] item;
-
+    private const int RECIPE_ARRAY_LENGTH = 3;
     void Start ()
     {
         container = GetComponent<Container>();
@@ -21,62 +22,55 @@ public class Cauldron : MonoBehaviour
 	
 	// Update is called once per frame
 	void Update () {
-	    if (container.currentContainObjectType.Count == 3)
+	    if (container.CurrentContainObjectType.Count == RECIPE_ARRAY_LENGTH)
 	    {
-	        recipeSucessful = -1;
-	        for (int nbRecipeIndex = 0; nbRecipeIndex < 3; nbRecipeIndex++)
+	        recipeSucessfulIndex = -1;
+	        for (int recipeIndex = 0; recipeIndex < recipeArray.Length; recipeIndex++)
 	        {
 	            nbGoodIngredient = 0;
-	            for (int j = 0; j < 3; j++)
+	            for (int recipeIngredientIndex = 0; recipeIngredientIndex < recipeArray[recipeIndex].Recipe.Length; recipeIngredientIndex++)
 	            {
-	                //container.currentContainObjectType.Contains(nbRecipe[nbRecipeIndex].recipe[j]);
-                    for (int k = 0; k < 3; k++)
+	                /*if (container.CurrentContainObjectType.Contains(recipeArray[recipeIndex].Recipe[recipeIngredientIndex]))
 	                {
-                        Debug.Log("i : " + nbRecipeIndex);
-                        Debug.Log("J : " + j);
-	                    Debug.Log("k : " + k);
-
-	                    Debug.Log(container.currentContainObjectType[k]);
-	                    Debug.Log(nbRecipe[nbRecipeIndex].recipe[j]);
-                        if (container.currentContainObjectType[k] == nbRecipe[nbRecipeIndex].recipe[j])
+	                    nbGoodIngredient++;
+	                    break;
+	                }*/
+                    for (int ingredientIndex = 0; ingredientIndex < container.CurrentContainObjectType.Count; ingredientIndex++)
+	                {
+                        if (container.CurrentContainObjectType[ingredientIndex] == recipeArray[recipeIndex].Recipe[recipeIngredientIndex])
 	                    {
 	                        nbGoodIngredient++;
-	                        
-	                        Debug.Log("nbGoodIngredient : " + nbGoodIngredient);
 	                        break;
-
 	                    }
 	                }
 
-	            }
+                }
                 if (nbGoodIngredient == 3)
 	            {
-	                recipeSucessful = nbRecipeIndex;
-                    Debug.Log("recipeSucessful " + recipeSucessful);
+	                recipeSucessfulIndex = recipeIndex;
 	            }
-             
-
             }
 
-	        container.currentContainObjectType = new List<Sprite>();
-	        for (int i = 0; i < 3; i++)
+	        SetContainerNull();
+            if (recipeSucessfulIndex > -1)
 	        {
-	            item[i].GetComponentInChildren<SpriteRenderer>().sprite = null;
-	        }
-
-	        Debug.Log("recipeSucessful " + recipeSucessful);
-            if (recipeSucessful > -1)
-	        {
-	            Debug.Log(container.currentContainObjectType);
-	            container.currentContainObjectType.Add(nbRecipe[recipeSucessful].potion);
-
+	            container.CurrentContainObjectType.Add(recipeArray[recipeSucessfulIndex].Potion);
             }
         }
-	    for (int i = 0; i < container.currentContainObjectType.Count; i++)
+	    for (int i = 0; i < container.CurrentContainObjectType.Count; i++)
 	    {
-	            item[i].GetComponentInChildren<SpriteRenderer>().sprite = container.currentContainObjectType[i];
+	            item[i].GetComponentInChildren<SpriteRenderer>().sprite = container.CurrentContainObjectType[i];
 	    }
 
 	}
+
+    public void SetContainerNull()
+    {
+        container.CurrentContainObjectType = new List<Sprite>();
+        for (int i = 0; i < 3; i++)
+        {
+            item[i].GetComponentInChildren<SpriteRenderer>().sprite = null;
+        }
+    }
 
 }

@@ -11,7 +11,12 @@ public class Ingredient : Draggable {
 	    containerType = "Cauldron";
 	}
 	
-    public override void Drop()
+    public override void DropEmpty()
+    {
+        Destroy(gameObject);
+    }
+
+    public override void Drop(GameObject container)
     {
         Destroy(gameObject);
     }

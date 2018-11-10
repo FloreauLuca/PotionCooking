@@ -11,7 +11,12 @@ public class Liquide : Draggable{
     }
     
 
-    public override void Drop()
+    public override void DropEmpty()
+    {
+        transform.position = starTransform;
+    }
+
+    public override void Drop(GameObject container)
     {
         transform.position = starTransform;
     }
