@@ -128,4 +128,9 @@ public class GameManager : MonoBehaviour
     {
         UiButtonId = UIbutton;
     }
+
+    public void NewCustomer()
+    {
+
+    }
 }

@@ -14,12 +14,13 @@ public class Cup : Draggable
     public override void DropEmpty()
     {
         transform.position = starTransform;
-        Empty();
     }
 
     public override void Drop(GameObject container)
     {
+        container.GetComponent<Customer>().Reception();
         transform.position = starTransform;
+        Empty();
     }
 
 }

@@ -2524,8 +2524,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   commandePanel: {fileID: 2142793304}
-  recipePrefab: {fileID: 1992916204860972, guid: 73f022542777ab64e8d692b6246cb0ff,
-    type: 2}
+  potion: {fileID: 11400000, guid: ec9ac74df4a4ab945aabae71c739d499, type: 2}
 --- !u!61 &1020979447
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2945,8 +2944,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   commandePanel: {fileID: 2142793304}
-  recipePrefab: {fileID: 1340855839452064, guid: 30c98e51cae8fff42b3be9e124ea9724,
-    type: 2}
+  potion: {fileID: 11400000, guid: ed6870c72ce00b14782029d1dc183da9, type: 2}
 --- !u!1 &1309358551
 GameObject:
   m_ObjectHideFlags: 0
@@ -3593,7 +3591,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 7b86612a897c4254ca80cc475547b5a0, type: 3}
   raycastLayerMask:
     serializedVersion: 2
-    m_Bits: 1536
+    m_Bits: 1024
   potionInvisibility: {fileID: 0}
   potionLevitation: {fileID: 0}
   potionMetamorphose: {fileID: 0}
@@ -3973,7 +3971,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 8fd0a5c85894e294e88c6aa27310674f, type: 3}
   raycastLayerMask:
     serializedVersion: 2
-    m_Bits: 1536
+    m_Bits: 1024
   potionInvisibility: {fileID: 0}
   potionLevitation: {fileID: 0}
   potionMetamorphose: {fileID: 0}
@@ -4218,21 +4216,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   recipeArray:
-  - recipe:
-    - {fileID: 21300000, guid: b735d200ac92db34db232693097a5245, type: 3}
-    - {fileID: 21300000, guid: 8fd0a5c85894e294e88c6aa27310674f, type: 3}
-    - {fileID: 21300000, guid: 3b575607cb0e855489cae5e09ec6017c, type: 3}
-    potion: {fileID: 21300000, guid: 89d24e5a0ce330e429f5f563320a7866, type: 3}
-  - recipe:
-    - {fileID: 21300000, guid: b735d200ac92db34db232693097a5245, type: 3}
-    - {fileID: 21300000, guid: fae6db9d62bfb8e4999f6ebea69328c9, type: 3}
-    - {fileID: 21300000, guid: 7b86612a897c4254ca80cc475547b5a0, type: 3}
-    potion: {fileID: 21300000, guid: f93a5204f088d3a42b0e526f308160a4, type: 3}
-  - recipe:
-    - {fileID: 21300000, guid: 3b575607cb0e855489cae5e09ec6017c, type: 3}
-    - {fileID: 21300000, guid: fae6db9d62bfb8e4999f6ebea69328c9, type: 3}
-    - {fileID: 21300000, guid: 7b86612a897c4254ca80cc475547b5a0, type: 3}
-    potion: {fileID: 21300000, guid: 26b1d9aeca85a394e96883b08098d164, type: 3}
+  - {fileID: 11400000, guid: ed6870c72ce00b14782029d1dc183da9, type: 2}
+  - {fileID: 11400000, guid: 322070746005524429644e558e29d919, type: 2}
+  - {fileID: 11400000, guid: ec9ac74df4a4ab945aabae71c739d499, type: 2}
   item:
   - {fileID: 1443560531}
   - {fileID: 538072920}
@@ -4988,8 +4974,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   commandePanel: {fileID: 2142793304}
-  recipePrefab: {fileID: 1090906723534772, guid: 5933210384d52f74b9ad91577a8c94ca,
-    type: 2}
+  potion: {fileID: 11400000, guid: 322070746005524429644e558e29d919, type: 2}
 --- !u!1 &1894805993
 GameObject:
   m_ObjectHideFlags: 0

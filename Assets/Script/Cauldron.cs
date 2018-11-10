@@ -9,9 +9,9 @@ using UnityEngine.UI;
 public class Cauldron : MonoBehaviour
 {
 
-    [SerializeField] private RecipeSerializable[] recipeArray;
+    [SerializeField] private SO_Potion[] recipeArray;
     private int nbGoodIngredient;
-    private int recipeSucessful = 0;
+    private int recipeSucessfulIndex = -1;
     private Container container;
     [SerializeField] private GameObject[] item;
     private const int RECIPE_ARRAY_LENGTH = 3;
@@ -24,7 +24,7 @@ public class Cauldron : MonoBehaviour
 	void Update () {
 	    if (container.CurrentContainObjectType.Count == RECIPE_ARRAY_LENGTH)
 	    {
-	        recipeSucessful = -1;
+	        recipeSucessfulIndex = -1;
 	        for (int recipeIndex = 0; recipeIndex < recipeArray.Length; recipeIndex++)
 	        {
 	            nbGoodIngredient = 0;
@@ -47,14 +47,14 @@ public class Cauldron : MonoBehaviour
                 }
                 if (nbGoodIngredient == 3)
 	            {
-	                recipeSucessful = recipeIndex;
+	                recipeSucessfulIndex = recipeIndex;
 	            }
             }
 
 	        SetContainerNull();
-            if (recipeSucessful > -1)
+            if (recipeSucessfulIndex > -1)
 	        {
-	            container.CurrentContainObjectType.Add(recipeArray[recipeSucessful].Potion);
+	            container.CurrentContainObjectType.Add(recipeArray[recipeSucessfulIndex].Potion);
             }
         }
 	    for (int i = 0; i < container.CurrentContainObjectType.Count; i++)
