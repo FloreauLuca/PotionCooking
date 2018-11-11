@@ -32,31 +32,32 @@ public class GameManager : MonoBehaviour
 	        Switch();
 	    }
 
-	    if (Input.GetButtonDown("First") || UiButtonId==1)
-	    {
-	        currentWindow = WindowType.HOME;
-	        currentCamera.transform.position = new Vector3(17.5f, 0f, -10f);
-	        UiButtonId = 0;
-        }
 
-	    if (Input.GetButtonDown("Second") || UiButtonId == 2)
+	    if (Input.GetButtonDown("First") || UiButtonId == 1)
 	    {
 	        currentWindow = WindowType.INGREDIENT;
 	        currentCamera.transform.position = new Vector3(0f, 0f, -10f);
 	        UiButtonId = 0;
         }
 
-	    if (Input.GetButtonDown("Third") || UiButtonId == 3)
+	    if (Input.GetButtonDown("Second") || UiButtonId == 2)
 	    {
 	        currentWindow = WindowType.BAKING;
 	        currentCamera.transform.position = new Vector3(5.75f, 0f, -10f);
 	        UiButtonId = 0;
         }
 
-	    if (Input.GetButtonDown("Four") || UiButtonId == 4)
+	    if (Input.GetButtonDown("Third") || UiButtonId == 3)
 	    {
 	        currentWindow = WindowType.PRESENTATION;
 	        currentCamera.transform.position = new Vector3(11.5f, 0f, -10f);
+	        UiButtonId = 0;
+	    }
+
+	    if (Input.GetButtonDown("Four") || UiButtonId == 4)
+	    {
+	        currentWindow = WindowType.HOME;
+	        currentCamera.transform.position = new Vector3(17.5f, 0f, -10f);
 	        UiButtonId = 0;
 	    }
     }
