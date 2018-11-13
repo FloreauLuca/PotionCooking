@@ -26,6 +26,8 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] private int totalNumberCustomer;
     private int currentNumberCustomer = 0;
+    private int servedCustomer = 0;
+    private int unservedCustomer = 0;
 
     private int UiButtonId = 0;
 	// Use this for initialization
@@ -160,5 +162,9 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    public void HappyCustomer()
+    {
+        
+    }
 
 }

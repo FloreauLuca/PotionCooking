@@ -77,7 +77,6 @@ public class Customer : MonoBehaviour
         Debug.Log("Reception");
         if (container.GetComponent<Container>().CurrentContainObjectType[0] == potion.PotionCauldron && welcomed && cupSprite == potion.CurrentPotionCup)
         {
-            gameManager.GetComponent<GameManager>().SpawnCustomer();
             parent.GetComponent<WaitingLine>().Customers.Remove(gameObject);
             parent.GetComponent<WaitingLine>().LineOrganization();
             Destroy(currentRecipe);
