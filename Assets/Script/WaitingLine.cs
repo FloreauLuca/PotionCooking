@@ -9,8 +9,9 @@ public class WaitingLine : MonoBehaviour
 
     [SerializeField] private bool welcomedCustomer = false;
 
-    [SerializeField] private float space;
+    [SerializeField] private float waitingDistance;
 
+    private float space = 0;
    
 
     public GameObject OtherLine
@@ -38,12 +39,18 @@ public class WaitingLine : MonoBehaviour
 	}
 	
 	// Update is called once per frame
-	void Update () {
-		
+	void Update ()
+	{
+	    
 	}
 
     public void LineOrganization()
     {
+        if (customers.Count != 0)
+        {
+            space = waitingDistance / (float)customers.Count;
+            Debug.Log(space);
+        }
         for (int customerIndex = 0; customerIndex < customers.Count; customerIndex++)
         {
             customers[customerIndex].transform.position = transform.position + Vector3.right * customerIndex * space;
@@ -53,6 +60,7 @@ public class WaitingLine : MonoBehaviour
 
     public void NewCustomer(GameObject customer, SO_Potion potion)
     {
+        
         GameObject newCustomer = Instantiate(customer, transform);
         newCustomer.GetComponent<Customer>().Potion = potion;
         Debug.Log("CreateCustomer");

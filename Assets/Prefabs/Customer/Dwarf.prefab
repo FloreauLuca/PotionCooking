@@ -52,7 +52,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1885677884540640}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -2.29, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1.5, y: 1.5, z: 1}
   m_Children:
   - {fileID: 4988576159958228}
@@ -122,6 +122,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   commandePanel: {fileID: 0}
   potion: {fileID: 11400000, guid: ed6870c72ce00b14782029d1dc183da9, type: 2}
+  waitingLimit: 10
+  askWaitingLimit: 10
 --- !u!212 &212203494188382004
 SpriteRenderer:
   m_ObjectHideFlags: 1
