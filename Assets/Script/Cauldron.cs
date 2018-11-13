@@ -5,6 +5,7 @@ using System.Linq;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
+using Random = UnityEngine.Random;
 
 public class Cauldron : MonoBehaviour
 {
@@ -17,6 +18,10 @@ public class Cauldron : MonoBehaviour
     private const int RECIPE_ARRAY_LENGTH = 3;
     void Start ()
     {
+        foreach (SO_Potion recipe in recipeArray)
+        {
+            recipe.CurrentPotionCup = recipe.PotionCupSprites[Random.Range(0, recipe.PotionCupSprites.Length)];
+        }
         container = GetComponent<Container>();
     }
 	
@@ -54,7 +59,7 @@ public class Cauldron : MonoBehaviour
 	        SetContainerNull();
             if (recipeSucessfulIndex > -1)
 	        {
-	            container.CurrentContainObjectType.Add(recipeArray[recipeSucessfulIndex].Potion);
+	            container.CurrentContainObjectType.Add(recipeArray[recipeSucessfulIndex].PotionCauldron);
             }
         }
 	    for (int i = 0; i < container.CurrentContainObjectType.Count; i++)
