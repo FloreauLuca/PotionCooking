@@ -12,6 +12,12 @@ public class Customer : MonoBehaviour
     private Container container;
     private GameObject gameManager;
 
+    private float currentWaiting = 0;
+    [SerializeField] private float waitingLimit;
+
+    private float currentAskWaiting = 0;
+    [SerializeField] private float askWaitingLimit;
+
     private GameObject parent;
 
     public SO_Potion Potion
@@ -28,6 +34,27 @@ public class Customer : MonoBehaviour
         parent.GetComponent<WaitingLine>().Customers.Add(gameObject);
         parent.GetComponent<WaitingLine>().LineOrganization();
         commandePanel = GameObject.Find("OrderPanel");
+    }
+
+    private void Update()
+    {
+        if (!welcomed)
+        {
+            currentWaiting += Time.deltaTime;
+
+            GetComponentInChildren<SpriteRenderer>().color = Color.white - Color.cyan * (currentWaiting / waitingLimit) + Color.black;
+        }
+        else
+        {
+            currentAskWaiting += Time.deltaTime;
+
+            GetComponentInChildren<SpriteRenderer>().color = Color.white - Color.cyan * (currentAskWaiting / waitingLimit) + Color.black;
+        }
+
+        if (currentWaiting > waitingLimit || currentAskWaiting > askWaitingLimit)
+        {
+            RageQuit();
+        }
     }
 
     private void OnMouseDown()
@@ -58,8 +85,17 @@ public class Customer : MonoBehaviour
         }
         else
         {
+
             container.CurrentContainObjectType = new List<Sprite>();
         }
+    }
+
+    public void RageQuit()
+    {
+        parent.GetComponent<WaitingLine>().Customers.Remove(gameObject);
+        parent.GetComponent<WaitingLine>().LineOrganization();
+        Destroy(currentRecipe);
+        Destroy(gameObject);
     }
 
 }

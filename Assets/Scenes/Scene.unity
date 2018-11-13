@@ -424,6 +424,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 322070746005524429644e558e29d919, type: 2}
   - {fileID: 11400000, guid: ec9ac74df4a4ab945aabae71c739d499, type: 2}
   waitingLine: {fileID: 468414326}
+  timeBetweenCustomer: 0.5
+  totalNumberCustomer: 100
 --- !u!4 &164720601
 Transform:
   m_ObjectHideFlags: 0
@@ -1416,7 +1418,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 468414324}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.79, y: 0, z: 0}
+  m_LocalPosition: {x: 0.5, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 411963822}
@@ -1436,7 +1438,7 @@ MonoBehaviour:
   otherLine: {fileID: 708692620}
   customers: []
   welcomedCustomer: 0
-  space: 0.5
+  waitingDistance: 2
 --- !u!1 &476130745
 GameObject:
   m_ObjectHideFlags: 0
@@ -1934,7 +1936,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 708692620}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.5, y: 0, z: 0}
+  m_LocalPosition: {x: -2, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 411963822}
@@ -1954,7 +1956,7 @@ MonoBehaviour:
   otherLine: {fileID: 468414324}
   customers: []
   welcomedCustomer: 1
-  space: 0.5
+  waitingDistance: 2.5
 --- !u!1 &726612301
 GameObject:
   m_ObjectHideFlags: 0
@@ -5607,13 +5609,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Padding:
-    m_Left: 0
-    m_Right: 0
-    m_Top: 10
-    m_Bottom: 10
+    m_Left: -200
+    m_Right: -200
+    m_Top: 12
+    m_Bottom: 0
   m_ChildAlignment: 1
-  m_Spacing: 10
-  m_ChildForceExpandWidth: 0
+  m_Spacing: -500
+  m_ChildForceExpandWidth: 1
   m_ChildForceExpandHeight: 0
   m_ChildControlWidth: 0
   m_ChildControlHeight: 0
