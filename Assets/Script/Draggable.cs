@@ -81,12 +81,11 @@ public class Draggable : MonoBehaviour
 
 	        foreach (Collider2D collider in colliders)
 	        {
-	            //Debug.Log(collider.name);
 	            if (collider != null && collider.gameObject != gameObject)
-	            {
+                { 
 	                if (collider.tag == containerType)
 	                {
-	                    //Debug.Log(containerType);
+	                    Debug.Log(collider);
 	                    collider.GetComponent<Container>().OnDropObject(objectType);
 	                    Drop(collider.gameObject);
 	                    dropped = true;

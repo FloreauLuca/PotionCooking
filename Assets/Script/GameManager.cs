@@ -17,12 +17,16 @@ public class GameManager : MonoBehaviour
     private WindowType currentWindow;
 
     [SerializeField]private GameObject currentCamera = null;
+
+    [SerializeField] private GameObject[] customersPrefab;
+    [SerializeField] private SO_Potion[] potionPrefab;
+    [SerializeField] private WaitingLine waitingLine;
     private int UiButtonId = 0;
 	// Use this for initialization
 	void Start () {
 
     currentWindow = WindowType.HOME;
-
+        SpawnCustomer();
 	}
 	
 	// Update is called once per frame
@@ -60,6 +64,9 @@ public class GameManager : MonoBehaviour
 	        currentCamera.transform.position = new Vector3(17.5f, 0f, -10f);
 	        UiButtonId = 0;
 	    }
+
+
+
     }
 
     public void Switch()
@@ -129,9 +136,11 @@ public class GameManager : MonoBehaviour
     {
         UiButtonId = UIbutton;
     }
-
-    public void NewCustomer()
+    
+    public void SpawnCustomer()
     {
-
+        waitingLine.NewCustomer(customersPrefab[Random.Range(0, customersPrefab.Length)], potionPrefab[Random.Range(0, potionPrefab.Length)]);
+        Debug.Log("New Customer");
     }
+
 }
