@@ -21,12 +21,18 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject[] customersPrefab;
     [SerializeField] private SO_Potion[] potionPrefab;
     [SerializeField] private WaitingLine waitingLine;
+
+    [SerializeField]private float timeBetweenCustomer;
+
+    [SerializeField] private int totalNumberCustomer;
+    private int currentNumberCustomer = 0;
+
     private int UiButtonId = 0;
 	// Use this for initialization
 	void Start () {
 
-    currentWindow = WindowType.HOME;
-        SpawnCustomer();
+        currentWindow = WindowType.HOME;
+	    StartCoroutine(WaitAndSummon());
 	}
 	
 	// Update is called once per frame
@@ -142,5 +148,17 @@ public class GameManager : MonoBehaviour
         waitingLine.NewCustomer(customersPrefab[Random.Range(0, customersPrefab.Length)], potionPrefab[Random.Range(0, potionPrefab.Length)]);
         Debug.Log("New Customer");
     }
+
+    IEnumerator WaitAndSummon()
+    {
+        SpawnCustomer();
+        currentNumberCustomer++;
+        yield return new WaitForSeconds(timeBetweenCustomer);
+        if (currentNumberCustomer < totalNumberCustomer)
+        {
+            StartCoroutine(WaitAndSummon());
+        }
+    }
+
 
 }

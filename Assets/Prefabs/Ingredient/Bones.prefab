@@ -9,74 +9,74 @@ Prefab:
     m_Modifications: []
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 1447099452793470}
+  m_RootGameObject: {fileID: 1215558125915514}
   m_IsPrefabAsset: 1
---- !u!1 &1447099452793470
+--- !u!1 &1215558125915514
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 4777845566140112}
-  - component: {fileID: 61443453287846558}
-  - component: {fileID: 114854551864670420}
+  - component: {fileID: 4926292749991338}
+  - component: {fileID: 61190627671535312}
+  - component: {fileID: 114544325593039310}
   m_Layer: 0
-  m_Name: Unicorn
+  m_Name: Bones
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!1 &1634895262345334
+--- !u!1 &1666047669751996
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 4462118645408468}
-  - component: {fileID: 212170948132087178}
+  - component: {fileID: 4983791921142946}
+  - component: {fileID: 212966971826512498}
   m_Layer: 0
-  m_Name: Licorne
+  m_Name: Os
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4462118645408468
+--- !u!4 &4926292749991338
 Transform:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1634895262345334}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 4777845566140112}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!4 &4777845566140112
-Transform:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1447099452793470}
+  m_GameObject: {fileID: 1215558125915514}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 4462118645408468}
+  - {fileID: 4983791921142946}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!61 &61443453287846558
+--- !u!4 &4983791921142946
+Transform:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1666047669751996}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4926292749991338}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &61190627671535312
 BoxCollider2D:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1447099452793470}
+  m_GameObject: {fileID: 1215558125915514}
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
@@ -96,29 +96,31 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.5, y: 0.5}
   m_EdgeRadius: 0
---- !u!114 &114854551864670420
+--- !u!114 &114544325593039310
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1447099452793470}
+  m_GameObject: {fileID: 1215558125915514}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d9fb962e14fef1843a48462e8306f087, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   objectType:
-  - {fileID: 21300000, guid: fae6db9d62bfb8e4999f6ebea69328c9, type: 3}
-  raycastRadius: 0.25
+  - {fileID: 21300000, guid: 3b575607cb0e855489cae5e09ec6017c, type: 3}
   raycastLayerMask:
     serializedVersion: 2
     m_Bits: 1024
---- !u!212 &212170948132087178
+  potionInvisibility: {fileID: 0}
+  potionLevitation: {fileID: 0}
+  potionMetamorphose: {fileID: 0}
+--- !u!212 &212966971826512498
 SpriteRenderer:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1634895262345334}
+  m_GameObject: {fileID: 1666047669751996}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -148,7 +150,7 @@ SpriteRenderer:
   m_SortingLayerID: -671751029
   m_SortingLayer: 2
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: fae6db9d62bfb8e4999f6ebea69328c9, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 3b575607cb0e855489cae5e09ec6017c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
