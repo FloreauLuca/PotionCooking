@@ -19,7 +19,9 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 4fe638b16bb210b4e8446030244c1989, type: 3}
   - {fileID: 21300000, guid: 889fb4d986ba0c946941526f41d6dba8, type: 3}
   - {fileID: 21300000, guid: 070cc76dec39d99498b373655139982d, type: 3}
+  - {fileID: 21300000, guid: 645e3420906ba5d44bcbeedffa2f38e4, type: 3}
   potionName: "Potion de L\xE9vitaion"
   panelPrefab: {fileID: 1992916204860972, guid: 73f022542777ab64e8d692b6246cb0ff,
     type: 2}
   potionCauldron: {fileID: 21300000, guid: 67d2fe9f6616e9a418a443be115c1fc2, type: 3}
+  cookingTime: 10

@@ -110,8 +110,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   commandePanel: {fileID: 0}
   potion: {fileID: 11400000, guid: 322070746005524429644e558e29d919, type: 2}
-  waitingLimit: 10
-  askWaitingLimit: 10
+  waitingLimit: 60
+  askWaitingLimit: 60
 --- !u!114 &114579740912351492
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -15,6 +15,14 @@ public class SO_Potion : ScriptableObject
 
     [SerializeField] private Sprite potionCauldron;
 
+    [SerializeField] private int cookingTime = 10;
+
+    public int CookingTime
+    {
+        get { return cookingTime; }
+        set { cookingTime = value; }
+    }
+
     public Sprite PotionCauldron
     {
         get { return potionCauldron; }

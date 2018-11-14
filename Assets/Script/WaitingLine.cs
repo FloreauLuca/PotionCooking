@@ -32,18 +32,6 @@ public class WaitingLine : MonoBehaviour
         }
     }
 
-
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update ()
-	{
-	    
-	}
-
     public void LineOrganization()
     {
         if (customers.Count != 0)

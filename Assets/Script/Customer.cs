@@ -79,6 +79,7 @@ public class Customer : MonoBehaviour
         {
             parent.GetComponent<WaitingLine>().Customers.Remove(gameObject);
             parent.GetComponent<WaitingLine>().LineOrganization();
+            gameManager.GetComponent<GameManager>().HappyCustomer();
             Destroy(currentRecipe);
             Destroy(gameObject);
         }
@@ -93,6 +94,7 @@ public class Customer : MonoBehaviour
     {
         parent.GetComponent<WaitingLine>().Customers.Remove(gameObject);
         parent.GetComponent<WaitingLine>().LineOrganization();
+        gameManager.GetComponent<GameManager>().MadCustomer();
         Destroy(currentRecipe);
         Destroy(gameObject);
     }
