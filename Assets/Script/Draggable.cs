@@ -85,7 +85,7 @@ public class Draggable : MonoBehaviour
                 { 
 	                if (collider.tag == containerType)
 	                {
-	                    Debug.Log(collider);
+	                    //Debug.Log(collider);
 	                    collider.GetComponent<Container>().OnDropObject(objectType);
 	                    Drop(collider.gameObject);
 	                    dropped = true;
@@ -126,14 +126,18 @@ public class Draggable : MonoBehaviour
         if (potion.name == "PotionInvisibility")
         {
             spriteRenderer.sprite = potionInvisibility;
-        }
+        } else
         if (potion.name == "PotionLevitation")
         {
             spriteRenderer.sprite = potionLevitation;
-        }
+        } else
         if (potion.name == "PotionMetamorphose")
         {
             spriteRenderer.sprite = potionMetamorphose;
+        }
+        else
+        {
+            Empty();
         }
     }
 

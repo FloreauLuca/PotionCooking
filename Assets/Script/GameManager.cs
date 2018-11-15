@@ -55,7 +55,7 @@ public class GameManager : MonoBehaviour
 
     public void End(int servedCustomer, int totalNumberCustomer)
     {
-        Debug.Log("End");
+        //Debug.Log("End");
         canvasWin.SetActive(true);
         scoreText.GetComponent<TextMeshProUGUI>().text = "Score : " + servedCustomer + " / " + totalNumberCustomer;
     }

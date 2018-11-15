@@ -37,7 +37,7 @@ public class WaitingLine : MonoBehaviour
         if (customers.Count != 0)
         {
             space = waitingDistance / (float)customers.Count;
-            Debug.Log(space);
+            //Debug.Log(space);
         }
         for (int customerIndex = 0; customerIndex < customers.Count; customerIndex++)
         {
@@ -51,7 +51,7 @@ public class WaitingLine : MonoBehaviour
         
         GameObject newCustomer = Instantiate(customer, transform);
         newCustomer.GetComponent<Customer>().Potion = potion;
-        Debug.Log("CreateCustomer");
+        //Debug.Log("CreateCustomer");
     }
 
 
