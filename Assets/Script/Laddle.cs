@@ -18,7 +18,7 @@ public class Laddle : Draggable
     void OnMouseDown()
     {
         ObjectType = cauldronContainer.CurrentContainObjectType;
-        if (ObjectType[0])
+        if (ObjectType != null && ObjectType[0] != null)
         {
             Fill(ObjectType[0]);
         }

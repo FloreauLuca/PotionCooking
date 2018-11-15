@@ -19,6 +19,11 @@ public class Draggable : MonoBehaviour
 
     private bool table;
 
+    private static int lol;
+
+    
+    
+
 
 
     [SerializeField] private Sprite potionInvisibility;

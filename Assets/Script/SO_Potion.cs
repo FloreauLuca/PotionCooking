@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
+
 [CreateAssetMenu(menuName = "Potion")]
 public class SO_Potion : ScriptableObject
 {

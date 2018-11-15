@@ -7,10 +7,19 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    
+    public enum SceneState
+    {
+        MAINMENU,
+        TUTORIAL,
+        GAME,
+        WIN,
+        PAUSE,
+        OPTION
+    }
 
     [SerializeField] private GameObject currentCamera = null;
 
+    private SceneState currentSceneState = SceneState.MAINMENU;
 
     [SerializeField] private GameObject canvasPause;
     [SerializeField] private GameObject canvasWin;
@@ -26,7 +35,7 @@ public class GameManager : MonoBehaviour
     void Update()
     {
 
-        if (Input.GetButtonDown("Pause"))
+        if (Input.GetButtonDown("Pause") && currentSceneState != SceneState.MAINMENU)
         {
             if (canvasPause.activeSelf)
             {
@@ -36,12 +45,6 @@ public class GameManager : MonoBehaviour
             {
                 canvasPause.SetActive(true);
             }
-        }
-
-        if (Input.GetButtonDown("Cancel"))
-        {
-            Application.Quit();
-
         }
     }
 
