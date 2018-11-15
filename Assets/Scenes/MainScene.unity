@@ -527,17 +527,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentCamera: {fileID: 1208629477}
-  customersPrefab:
-  - {fileID: 1402086066703422, guid: 4898ff05f4b1b9d4ca0399d271579005, type: 2}
-  - {fileID: 1885677884540640, guid: 0a935f1e8c0977d40a7a96f8966568f8, type: 2}
-  - {fileID: 1845491181022442, guid: a2a75c291292fef40ba3799565fa7a2e, type: 2}
-  potionPrefab:
-  - {fileID: 11400000, guid: ed6870c72ce00b14782029d1dc183da9, type: 2}
-  - {fileID: 11400000, guid: 322070746005524429644e558e29d919, type: 2}
-  - {fileID: 11400000, guid: ec9ac74df4a4ab945aabae71c739d499, type: 2}
-  waitingLine: {fileID: 468414326}
-  timeBetweenCustomer: 10
-  totalNumberCustomer: 5
   canvasPause: {fileID: 837073219}
   canvasWin: {fileID: 2054072239}
   scoreText: {fileID: 627461652}
@@ -990,7 +979,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 96.21, y: 19.130001}
+  m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -1426,6 +1415,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 411963822}
+  - component: {fileID: 411963823}
   m_Layer: 10
   m_Name: Customer
   m_TagString: Untagged
@@ -1448,6 +1438,28 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &411963823
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 411963821}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e71c7011cd94f449a468f999f1638dd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  customersPrefab:
+  - {fileID: 1402086066703422, guid: 4898ff05f4b1b9d4ca0399d271579005, type: 2}
+  - {fileID: 1885677884540640, guid: 0a935f1e8c0977d40a7a96f8966568f8, type: 2}
+  - {fileID: 1845491181022442, guid: a2a75c291292fef40ba3799565fa7a2e, type: 2}
+  potionPrefab:
+  - {fileID: 11400000, guid: ed6870c72ce00b14782029d1dc183da9, type: 2}
+  - {fileID: 11400000, guid: 322070746005524429644e558e29d919, type: 2}
+  - {fileID: 11400000, guid: ec9ac74df4a4ab945aabae71c739d499, type: 2}
+  waitingLine: {fileID: 468414326}
+  timeBetweenCustomer: 10
+  totalNumberCustomer: 10
 --- !u!1 &428174317
 GameObject:
   m_ObjectHideFlags: 0
@@ -4183,6 +4195,7 @@ GameObject:
   - component: {fileID: 1208629480}
   - component: {fileID: 1208629479}
   - component: {fileID: 1208629478}
+  - component: {fileID: 1208629481}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -4250,6 +4263,17 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1208629481
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1208629477}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 684b1e64cf4850347bddd3ee0669201f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1314800431
 GameObject:
   m_ObjectHideFlags: 0

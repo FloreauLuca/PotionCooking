@@ -19,7 +19,6 @@ public class Customer : MonoBehaviour
     [SerializeField] private float askWaitingLimit;
 
     private GameObject parent;
-
     public SO_Potion Potion
     {
         get { return potion; }
@@ -79,7 +78,7 @@ public class Customer : MonoBehaviour
         {
             parent.GetComponent<WaitingLine>().Customers.Remove(gameObject);
             parent.GetComponent<WaitingLine>().LineOrganization();
-            gameManager.GetComponent<GameManager>().HappyCustomer();
+            GetComponentInParent<SpawnCustomer>().HappyCustomer();
             Destroy(currentRecipe);
             Destroy(gameObject);
         }
@@ -94,7 +93,7 @@ public class Customer : MonoBehaviour
     {
         parent.GetComponent<WaitingLine>().Customers.Remove(gameObject);
         parent.GetComponent<WaitingLine>().LineOrganization();
-        gameManager.GetComponent<GameManager>().MadCustomer();
+        GetComponentInParent<SpawnCustomer>().MadCustomer();
         Destroy(currentRecipe);
         Destroy(gameObject);
     }
