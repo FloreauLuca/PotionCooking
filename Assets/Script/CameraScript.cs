@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using Cinemachine;
 using UnityEngine;
 
 public class CameraScript : MonoBehaviour {
@@ -14,6 +15,7 @@ public class CameraScript : MonoBehaviour {
 
     private WindowType currentWindow;
 
+    private CinemachineVirtualCamera cinemachine;
 
     private int uiButtonId = 0;
 
@@ -27,6 +29,7 @@ public class CameraScript : MonoBehaviour {
     void Start () {
 
         currentWindow = WindowType.HOME;
+        cinemachine = GetComponent<CinemachineVirtualCamera>();
     }
 	
 	// Update is called once per frame
