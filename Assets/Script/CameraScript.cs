@@ -52,21 +52,21 @@ public class CameraScript : MonoBehaviour {
         if (Input.GetButtonDown("Second") || UiButtonId == 2)
         {
             currentWindow = WindowType.BAKING;
-            transform.position = new Vector3(5.75f, 0f, -10f);
+            transform.position = new Vector3(6.75f, 0f, -10f);
             uiButtonId = 0;
         }
 
         if (Input.GetButtonDown("Third") || UiButtonId == 3)
         {
             currentWindow = WindowType.PRESENTATION;
-            transform.position = new Vector3(11.5f, 0f, -10f);
+            transform.position = new Vector3(13.5f, 0f, -10f);
             uiButtonId = 0;
         }
 
         if (Input.GetButtonDown("Four") || UiButtonId == 4)
         {
             currentWindow = WindowType.HOME;
-            transform.position = new Vector3(17.5f, 0f, -10f);
+            transform.position = new Vector3(20.25f, 0f, -10f);
             uiButtonId = 0;
         }
 
@@ -88,19 +88,19 @@ public class CameraScript : MonoBehaviour {
             case WindowType.INGREDIENT:
                 {
                     currentWindow = WindowType.BAKING;
-                    transform.position = new Vector3(5.75f, 0f, -10f);
+                    transform.position = new Vector3(6.75f, 0f, -10f);
                     break;
                 }
             case WindowType.BAKING:
                 {
                     currentWindow = WindowType.PRESENTATION;
-                    transform.position = new Vector3(11.5f, 0f, -10f);
+                    transform.position = new Vector3(13.5f, 0f, -10f);
                     break;
                 }
             case WindowType.PRESENTATION:
                 {
                     currentWindow = WindowType.HOME;
-                    transform.position = new Vector3(17.5f, 0f, -10f);
+                    transform.position = new Vector3(20.25f, 0f, -10f);
                     break;
                 }
         }
@@ -114,7 +114,7 @@ public class CameraScript : MonoBehaviour {
             case WindowType.INGREDIENT:
                 {
                     currentWindow = WindowType.HOME;
-                    transform.position = new Vector3(17.5f, 0f, -10f);
+                    transform.position = new Vector3(20.25f, 0f, -10f);
                     break;
                 }
             case WindowType.BAKING:
@@ -126,13 +126,13 @@ public class CameraScript : MonoBehaviour {
             case WindowType.PRESENTATION:
                 {
                     currentWindow = WindowType.BAKING;
-                    transform.position = new Vector3(5.75f, 0f, -10f);
+                    transform.position = new Vector3(6.75f, 0f, -10f);
                     break;
                 }
             case WindowType.HOME:
                 {
                     currentWindow = WindowType.PRESENTATION;
-                    transform.position = new Vector3(11.5f, 0f, -10f);
+                    transform.position = new Vector3(13.5f, 0f, -10f);
                     break;
                 }
         }

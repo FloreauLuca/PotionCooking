@@ -20,12 +20,6 @@ public class MenuManager : MonoBehaviour
 	// Update is called once per frame
 	void Update () {
 
-
-	    if (Input.GetButtonDown("Cancel"))
-	    {
-	        Quit();
-
-	    }
     }
 
     public void OptionsButton()
@@ -43,12 +37,6 @@ public class MenuManager : MonoBehaviour
     public void PlayButton()
     {
         SceneManager.LoadScene("MainScene");
-    }
-
-    public void Quit()
-    {
-        Application.Quit();
-        EditorApplication.isPlaying = false;
     }
 
     public void BackButton()

@@ -24,4 +24,4 @@ MonoBehaviour:
   panelPrefab: {fileID: 1340855839452064, guid: 30c98e51cae8fff42b3be9e124ea9724,
     type: 2}
   potionCauldron: {fileID: 21300000, guid: 356b7d207fd369245b1b1b27c088445c, type: 3}
-  cookingTime: 10
+  cookingTime: 5

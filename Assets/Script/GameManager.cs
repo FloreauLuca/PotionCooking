@@ -2,29 +2,19 @@
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 
 
 public class GameManager : MonoBehaviour
 {
-    public enum SceneState
-    {
-        MAINMENU,
-        TUTORIAL,
-        GAME,
-        WIN,
-        PAUSE,
-        OPTION
-    }
 
     [SerializeField] private GameObject currentCamera = null;
-
-    private SceneState currentSceneState = SceneState.MAINMENU;
 
     [SerializeField] private GameObject canvasPause;
     [SerializeField] private GameObject canvasWin;
     [SerializeField] private GameObject scoreText;
 
+    [SerializeField] private GameObject winText;
     // Use this for initialization
     void Start()
     {
@@ -35,7 +25,7 @@ public class GameManager : MonoBehaviour
     void Update()
     {
 
-        if (Input.GetButtonDown("Pause") && currentSceneState != SceneState.MAINMENU)
+        if (Input.GetButtonDown("Pause"))
         {
             if (canvasPause.activeSelf)
             {
@@ -61,5 +51,23 @@ public class GameManager : MonoBehaviour
         //Debug.Log("End");
         canvasWin.SetActive(true);
         scoreText.GetComponent<TextMeshProUGUI>().text = "Score : " + servedCustomer + " / " + totalNumberCustomer;
+        if (servedCustomer / totalNumberCustomer >= 1 / 2)
+        {
+            winText.GetComponent<TextMeshProUGUI>().text = "Win";
+        }
+        else
+        {
+            winText.GetComponent<TextMeshProUGUI>().text = "Loose";
+        }
+    }
+
+    public void MenuButton()
+    {
+        SceneManager.LoadScene("MainMenu");
+    }
+
+    public void Restart()
+    {
+        SceneManager.LoadScene("MainScene");
     }
 }
