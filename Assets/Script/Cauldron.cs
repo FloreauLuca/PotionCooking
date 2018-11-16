@@ -16,8 +16,7 @@ public class Cauldron : MonoBehaviour
     private Container container;
     [SerializeField] private GameObject[] item;
     private const int RECIPE_ARRAY_LENGTH = 3;
-
-    private float cookingTime = 0;
+    
     private float recipeTime;
     private bool cooking = false;
 
@@ -62,8 +61,7 @@ public class Cauldron : MonoBehaviour
             if (recipeSucessfulIndex > -1)
             {
                 recipeTime = recipeArray[recipeSucessfulIndex].CookingTime;
-                cookingTime = 0;
-                cooking = true;
+                StartCoroutine(Cooking());
                 sandGlassAnimator.SetFloat("Speed", 1/recipeTime);
             }
         }
@@ -71,20 +69,7 @@ public class Cauldron : MonoBehaviour
 	    {
 	        item[i].GetComponentInChildren<SpriteRenderer>().sprite = container.CurrentContainObjectType[i];
 	    }
-
-	    if (cooking)
-	    {
-	        cookingTime+=Time.deltaTime;
-	        if (cookingTime >= recipeTime)
-	        {
-
-	            container.CurrentContainObjectType.Add(recipeArray[recipeSucessfulIndex].PotionCauldron);
-	            cooking = false;
-	            cookingTime = 0;
-
-	            sandGlassAnimator.SetFloat("Speed", 0);
-            }
-	    }
+        
 
 	}
 
@@ -95,6 +80,15 @@ public class Cauldron : MonoBehaviour
         {
             item[i].GetComponentInChildren<SpriteRenderer>().sprite = null;
         }
+    }
+
+    IEnumerator Cooking()
+    {
+        yield return new WaitForSeconds(recipeTime);
+        container.CurrentContainObjectType.Add(recipeArray[recipeSucessfulIndex].PotionCauldron);
+        cooking = false;
+
+        sandGlassAnimator.SetFloat("Speed", 0);
     }
 
 }

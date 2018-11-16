@@ -14,23 +14,11 @@ public class RecipeGUI : MonoBehaviour, IPointerEnterHandler, IPointerExitHandle
     [SerializeField] private GameObject[] ingredientItem;
 
     [SerializeField] private GameObject potionItem;
-    [SerializeField] private GameObject textMesh;
+    [SerializeField] private GameObject nameText;
+    [SerializeField] private GameObject timeText;
     void Start()
     {
-
         animator = GetComponent<Animator>();
-
-        for (int i = 0; i < ingredientItem.Length; i++)
-        {
-            ingredientItem[i].GetComponent<Image>().sprite = potion.Recipe[i];
-        }
-
-        ;
-
-        potionItem.GetComponent<Image>().sprite = potion.CurrentPotionCup;
-        textMesh.GetComponent<TextMeshProUGUI>().text = potion.PotionName;
-
-
     }
     // Use this for initialization
     
@@ -49,6 +37,16 @@ public class RecipeGUI : MonoBehaviour, IPointerEnterHandler, IPointerExitHandle
     public SO_Potion Potion
     {
         get { return potion; }
-        set { potion = value; }
+        set
+        {
+            potion = value;
+            for (int i = 0; i < ingredientItem.Length; i++)
+            {
+                ingredientItem[i].GetComponent<Image>().sprite = potion.Recipe[i];
+            }
+            potionItem.GetComponent<Image>().sprite = potion.CurrentPotionCup;
+            nameText.GetComponent<TextMeshProUGUI>().text = potion.PotionName;
+            timeText.GetComponent<TextMeshProUGUI>().text = "Time : " + potion.CookingTime.ToString();
+        }
     }
 }

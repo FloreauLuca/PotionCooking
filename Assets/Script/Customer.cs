@@ -61,6 +61,7 @@ public class Customer : MonoBehaviour
         if (!welcomed)
         {
             currentRecipe = Instantiate(potion.PanelPrefab, commandePanel.transform);
+            currentRecipe.GetComponent<RecipeGUI>().Potion = potion;
             welcomed = true;
             parent.GetComponent<WaitingLine>().Customers.Remove(gameObject);
             parent.GetComponent<WaitingLine>().LineOrganization();
