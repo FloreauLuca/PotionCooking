@@ -18,6 +18,8 @@ public class Liquide : Draggable{
 
     public override void Drop(GameObject container)
     {
+
+        base.Drop(container);
         transform.position = starTransform;
     }
 }

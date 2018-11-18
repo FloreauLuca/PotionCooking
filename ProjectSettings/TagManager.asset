@@ -11,6 +11,7 @@ TagManager:
   - Cup
   - Customer
   - Table
+  - GlobalGameManager
   layers:
   - Default
   - TransparentFX

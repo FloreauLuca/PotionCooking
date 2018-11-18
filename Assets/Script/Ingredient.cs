@@ -18,6 +18,7 @@ public class Ingredient : Draggable {
 
     public override void Drop(GameObject container)
     {
+        base.Drop(container);
         Destroy(gameObject);
     }
 }

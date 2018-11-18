@@ -19,7 +19,6 @@ public class Customer : MonoBehaviour
     [SerializeField] private float askWaitingLimit;
 
     private GameObject parent;
-
     public SO_Potion Potion
     {
         get { return potion; }
@@ -62,6 +61,7 @@ public class Customer : MonoBehaviour
         if (!welcomed)
         {
             currentRecipe = Instantiate(potion.PanelPrefab, commandePanel.transform);
+            currentRecipe.GetComponent<RecipeGUI>().Potion = potion;
             welcomed = true;
             parent.GetComponent<WaitingLine>().Customers.Remove(gameObject);
             parent.GetComponent<WaitingLine>().LineOrganization();
@@ -74,12 +74,12 @@ public class Customer : MonoBehaviour
 
     public void Reception(Sprite cupSprite)
     {
-        Debug.Log("Reception");
+        //Debug.Log("Reception");
         if (container.GetComponent<Container>().CurrentContainObjectType[0] == potion.PotionCauldron && welcomed && cupSprite == potion.CurrentPotionCup)
         {
-            gameManager.GetComponent<GameManager>().SpawnCustomer();
             parent.GetComponent<WaitingLine>().Customers.Remove(gameObject);
             parent.GetComponent<WaitingLine>().LineOrganization();
+            GetComponentInParent<SpawnCustomer>().HappyCustomer();
             Destroy(currentRecipe);
             Destroy(gameObject);
         }
@@ -94,6 +94,7 @@ public class Customer : MonoBehaviour
     {
         parent.GetComponent<WaitingLine>().Customers.Remove(gameObject);
         parent.GetComponent<WaitingLine>().LineOrganization();
+        GetComponentInParent<SpawnCustomer>().MadCustomer();
         Destroy(currentRecipe);
         Destroy(gameObject);
     }

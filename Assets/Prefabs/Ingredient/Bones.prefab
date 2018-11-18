@@ -115,6 +115,7 @@ MonoBehaviour:
   potionInvisibility: {fileID: 0}
   potionLevitation: {fileID: 0}
   potionMetamorphose: {fileID: 0}
+  audioClip: {fileID: 8300000, guid: 2aa69e27048b133419001a91e74509ff, type: 3}
 --- !u!212 &212966971826512498
 SpriteRenderer:
   m_ObjectHideFlags: 1

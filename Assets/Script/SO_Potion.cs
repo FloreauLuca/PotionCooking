@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
+
 [CreateAssetMenu(menuName = "Potion")]
 public class SO_Potion : ScriptableObject
 {
@@ -14,6 +15,14 @@ public class SO_Potion : ScriptableObject
     [SerializeField] private GameObject panelPrefab;
 
     [SerializeField] private Sprite potionCauldron;
+
+    [SerializeField] private int cookingTime = 10;
+
+    public int CookingTime
+    {
+        get { return cookingTime; }
+        set { cookingTime = value; }
+    }
 
     public Sprite PotionCauldron
     {
