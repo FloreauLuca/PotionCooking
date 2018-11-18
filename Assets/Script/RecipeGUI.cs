@@ -16,13 +16,36 @@ public class RecipeGUI : MonoBehaviour, IPointerEnterHandler, IPointerExitHandle
     [SerializeField] private GameObject potionItem;
     [SerializeField] private GameObject nameText;
     [SerializeField] private GameObject timeText;
+    [SerializeField] private RectTransform rectTransform;
+    private GameObject mousePrefab;
     void Start()
     {
+        mousePrefab = GameObject.FindGameObjectWithTag("Mouse");
         animator = GetComponent<Animator>();
     }
     // Use this for initialization
-    
-	
+    /*private void Update()
+    {
+
+        Debug.Log(Camera.main.ScreenToWorldPoint(mousePrefab.transform.position));
+        Debug.Log(Camera.main.WorldToScreenPoint(mousePrefab.transform.position));
+        Debug.Log(Camera.main.WorldToViewportPoint(mousePrefab.transform.position));
+        Debug.Log(rectTransform.anchorMin + rectTransform.anchorMax);
+
+        Debug.Log(rectTransform.rect);
+        Rect recttest = new Rect(rectTransform.rect.position, rectTransform.rect.size);
+        Debug.Log(recttest);
+
+        if (rectTransform.rect.Contains(mousePrefab.transform.position))
+        {
+            animator.SetBool("MouseOver", true);
+        }
+        else
+        {
+            animator.SetBool("MouseOver", false);
+        }
+    }*/
+
 
     public void OnPointerEnter(PointerEventData eventData)
     {
