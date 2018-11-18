@@ -12,6 +12,7 @@ TagManager:
   - Customer
   - Table
   - GlobalGameManager
+  - Mouse
   layers:
   - Default
   - TransparentFX

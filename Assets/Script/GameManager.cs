@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using Cinemachine;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -17,9 +18,24 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject winText;
 
     private GlobalGameManager globalGameManager;
+
+
+    [SerializeField] private GameObject cinemachineComposition;
+    [SerializeField] private CinemachineBrain cinemachineBrain;
+
+    private GameObject mousePrefab;
+
+    private GameObject customerChoose = null;
+
+    public GameObject CustomerChoose // Pour vérifier si le button down à déjà été appuier sur un objey
+    {
+        get { return customerChoose; }
+        set { customerChoose = value; }
+    }
     // Use this for initialization
     void Start()
     {
+        mousePrefab = GameObject.FindGameObjectWithTag("Mouse");
         Time.timeScale = 1;
         globalGameManager = GameObject.FindGameObjectWithTag("GlobalGameManager").GetComponent<GlobalGameManager>();
     }
@@ -27,6 +43,34 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+        if (Input.GetMouseButtonUp(0))
+        {
+            customerChoose = null;
+        }
+
+        if (!canvasPause.activeSelf && !canvasWin.activeSelf && !globalGameManager.OptionCanvas.activeSelf)
+        {
+            mousePrefab.SetActive(true);
+            if (globalGameManager.Scroll)
+            {
+                cinemachineComposition.SetActive(true);
+                cinemachineBrain.enabled = true;
+                Cursor.lockState = CursorLockMode.Locked;
+            }
+            else
+            {
+                cinemachineBrain.enabled = false;
+                cinemachineComposition.SetActive(false);
+                Cursor.lockState = CursorLockMode.Locked;
+            }
+            
+        }
+        else
+        {
+            mousePrefab.SetActive(false);
+            Cursor.lockState = CursorLockMode.None;
+        }
 
         if (Input.GetButtonDown("Pause"))
         {

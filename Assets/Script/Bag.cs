@@ -7,10 +7,23 @@ public class Bag : MonoBehaviour
     [SerializeField] private GameObject objectprefab;
 
     private GameObject spawnObject;
-    private void OnMouseDown()
+
+    private GameObject mousePrefab;
+
+    void Start()
     {
-       spawnObject = Instantiate(objectprefab, transform);
-       spawnObject.GetComponent<Ingredient>().Dragging = true;
+        mousePrefab = GameObject.FindGameObjectWithTag("Mouse");
     }
-   
+    private void Update()
+    {
+        if (Input.GetMouseButtonDown(0))
+        {
+            if (gameObject.GetComponent<BoxCollider2D>().OverlapPoint(mousePrefab.transform.position))
+            {
+                spawnObject = Instantiate(objectprefab, transform);
+                spawnObject.GetComponent<Ingredient>().Dragging = true;
+            }
+        }
+    }
+
 }

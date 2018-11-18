@@ -8,15 +8,19 @@ public class GlobalGameManager : MonoBehaviour
 {
     private int option;
     private bool scroll;
-    private float volumeMusic;
-    private float volumeSound;
-    private float volumeMaster;
-    private float sensitivity;
-
+    private float volumeMusic = 1;
+    private float volumeSound = 1;
+    private float volumeMaster = 1;
+    private float sensitivity = 0.25f;
     [SerializeField] private GameObject optionCanvas;
     [SerializeField] private AudioMixer audioMixer;
     private GameObject canvasBeforeOptions = null;
     [SerializeField] private GameObject scrollPanel;
+
+    public GameObject OptionCanvas
+    {
+        get { return optionCanvas; }
+    }
 
     public bool Scroll
     {
@@ -56,7 +60,6 @@ public class GlobalGameManager : MonoBehaviour
                 Destroy(gameObject);
         }
 		DontDestroyOnLoad(gameObject);
-
     }
 	
 	// Update is called once per frame
@@ -68,6 +71,7 @@ public class GlobalGameManager : MonoBehaviour
 	        Quit();
 
 	    }
+
 
     }
 

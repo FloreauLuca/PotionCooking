@@ -18,7 +18,7 @@ public class CameraScript : MonoBehaviour {
     private CinemachineVirtualCamera cinemachine;
 
     private int uiButtonId = 0;
-
+    private GameObject mousePrefab;
     public int UiButtonId
     {
         get { return uiButtonId; }
@@ -27,14 +27,14 @@ public class CameraScript : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-
+        mousePrefab = GameObject.FindGameObjectWithTag("Mouse");
         currentWindow = WindowType.HOME;
         cinemachine = GetComponent<CinemachineVirtualCamera>();
     }
 	
 	// Update is called once per frame
-	void Update () {
-
+	void Update ()
+	{
 
         if (Input.GetButtonDown("Space"))
         {
@@ -47,6 +47,7 @@ public class CameraScript : MonoBehaviour {
             currentWindow = WindowType.INGREDIENT;
             transform.position = new Vector3(0f, 0f, -10f);
             uiButtonId = 0;
+            mousePrefab.transform.position = gameObject.transform.position;
         }
 
         if (Input.GetButtonDown("Second") || UiButtonId == 2)
@@ -54,6 +55,7 @@ public class CameraScript : MonoBehaviour {
             currentWindow = WindowType.BAKING;
             transform.position = new Vector3(6.75f, 0f, -10f);
             uiButtonId = 0;
+            mousePrefab.transform.position = gameObject.transform.position;
         }
 
         if (Input.GetButtonDown("Third") || UiButtonId == 3)
@@ -61,6 +63,7 @@ public class CameraScript : MonoBehaviour {
             currentWindow = WindowType.PRESENTATION;
             transform.position = new Vector3(13.5f, 0f, -10f);
             uiButtonId = 0;
+            mousePrefab.transform.position = gameObject.transform.position;
         }
 
         if (Input.GetButtonDown("Four") || UiButtonId == 4)
@@ -68,6 +71,7 @@ public class CameraScript : MonoBehaviour {
             currentWindow = WindowType.HOME;
             transform.position = new Vector3(20.25f, 0f, -10f);
             uiButtonId = 0;
+            mousePrefab.transform.position = gameObject.transform.position;
         }
 
 
@@ -104,6 +108,8 @@ public class CameraScript : MonoBehaviour {
                     break;
                 }
         }
+
+        mousePrefab.transform.position = gameObject.transform.position;
     }
 
     public void SwitchDown()
@@ -136,6 +142,8 @@ public class CameraScript : MonoBehaviour {
                     break;
                 }
         }
+
+        mousePrefab.transform.position = gameObject.transform.position;
     }
 
 

@@ -19,6 +19,8 @@ public class Customer : MonoBehaviour
     [SerializeField] private float askWaitingLimit;
 
     private GameObject parent;
+
+    private GameObject mousePrefab;
     public SO_Potion Potion
     {
         get { return potion; }
@@ -27,6 +29,7 @@ public class Customer : MonoBehaviour
 
     private void Start()
     {
+        mousePrefab = GameObject.FindGameObjectWithTag("Mouse");
         gameManager = GameObject.FindGameObjectWithTag("GameManager");
         container = GetComponent<Container>();
         parent = transform.parent.gameObject;
@@ -54,23 +57,32 @@ public class Customer : MonoBehaviour
         {
             RageQuit();
         }
-    }
 
-    private void OnMouseDown()
-    {
-        if (!welcomed)
+
+        if (Input.GetMouseButtonDown(0))
         {
-            currentRecipe = Instantiate(potion.PanelPrefab, commandePanel.transform);
-            currentRecipe.GetComponent<RecipeGUI>().Potion = potion;
-            welcomed = true;
-            parent.GetComponent<WaitingLine>().Customers.Remove(gameObject);
-            parent.GetComponent<WaitingLine>().LineOrganization();
-            transform.SetParent(parent.GetComponent<WaitingLine>().OtherLine.transform);
-            parent = transform.parent.gameObject;
-            parent.GetComponent<WaitingLine>().Customers.Add(gameObject);
-            parent.GetComponent<WaitingLine>().LineOrganization();
+            if (gameManager.GetComponent<GameManager>().CustomerChoose == null && GetComponent<BoxCollider2D>().OverlapPoint(mousePrefab.transform.position))
+            {
+                if (!welcomed)
+                {
+                    currentRecipe = Instantiate(potion.PanelPrefab, commandePanel.transform);
+                    currentRecipe.GetComponent<RecipeGUI>().Potion = potion;
+                    welcomed = true;
+                    parent.GetComponent<WaitingLine>().Customers.Remove(gameObject);
+                    parent.GetComponent<WaitingLine>().LineOrganization();
+                    transform.SetParent(parent.GetComponent<WaitingLine>().OtherLine.transform);
+                    parent = transform.parent.gameObject;
+                    parent.GetComponent<WaitingLine>().Customers.Add(gameObject);
+                    parent.GetComponent<WaitingLine>().LineOrganization();
+                }
+
+                gameManager.GetComponent<GameManager>().CustomerChoose = gameObject;
+            }
         }
+
+
     }
+    
 
     public void Reception(Sprite cupSprite)
     {

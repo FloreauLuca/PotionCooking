@@ -5,14 +5,27 @@ using UnityEngine;
 public class Trash : MonoBehaviour
 {
     private Cauldron cauldron;
-	// Use this for initialization
-	void Start ()
+    // Use this for initialization
+
+
+    private GameObject mousePrefab;
+
+    void Start ()
 	{
-	    cauldron = GetComponentInParent<Cauldron>();
+	    mousePrefab = GameObject.FindGameObjectWithTag("Mouse");
+        cauldron = GetComponentInParent<Cauldron>();
 	}
-	
-    private void OnMouseDown()
+    private void Update()
     {
-        cauldron.SetContainerNull();
+
+
+        if (Input.GetMouseButtonDown(0))
+        {
+            if (gameObject.GetComponent<BoxCollider2D>().OverlapPoint(mousePrefab.transform.position))
+            {
+                cauldron.SetContainerNull();
+            }
+        }
     }
+    
 }

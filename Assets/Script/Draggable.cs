@@ -19,13 +19,6 @@ public class Draggable : MonoBehaviour
 
     private bool table;
 
-    private static int lol;
-
-    
-    
-
-
-
     [SerializeField] private Sprite potionInvisibility;
     [SerializeField] private Sprite potionLevitation;
     [SerializeField] private Sprite potionMetamorphose;
@@ -39,7 +32,7 @@ public class Draggable : MonoBehaviour
     [SerializeField]
     private AudioClip audioClip;
 
-
+    protected GameObject mousePrefab;
     // Use this for initialization
     public bool Dragging
     {
@@ -53,7 +46,7 @@ public class Draggable : MonoBehaviour
     }
     protected virtual void Start ()
     {
-
+        mousePrefab = GameObject.FindGameObjectWithTag("Mouse");
         spriteRenderer = GetComponentInChildren<SpriteRenderer>();
         animator = GetComponentInChildren<Animator>();
         emptyCup = spriteRenderer.sprite;
@@ -66,18 +59,24 @@ public class Draggable : MonoBehaviour
     	
 	// Update is called once per frame
 	protected virtual void Update () {
-	    if (container != null)
+
+
+	    if (Input.GetMouseButtonDown(0))
+	    {
+	        if (gameObject.GetComponent<BoxCollider2D>().OverlapPoint(mousePrefab.transform.position))
+	        {
+	            dragging = true;
+	        }
+	    }
+
+        if (container != null)
 	    {
 	        objectType = container.CurrentContainObjectType;
 	    }
 
 	    if (dragging)
 	    {
-
-	        //Debug.Log("yousk2");
-	        Vector3 point = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-	        point.z = 0;
-	        gameObject.transform.position = point;
+	        gameObject.transform.position = mousePrefab.transform.position;
 
         }
 
@@ -117,12 +116,8 @@ public class Draggable : MonoBehaviour
 	            table = false;
 	        }
 	    }
-    }
-    private void OnMouseDrag()
-    {
-        dragging = true;
-    }
 
+	}
 
     public virtual void Drop(GameObject container)
     {
@@ -158,4 +153,5 @@ public class Draggable : MonoBehaviour
     {
         spriteRenderer.sprite = emptyCup;
     }
+    
 }
