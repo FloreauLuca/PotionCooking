@@ -18,6 +18,8 @@ public class Cup : Draggable
 
     public override void Drop(GameObject container)
     {
+
+        base.Drop(container);
         container.GetComponent<Customer>().Reception(spriteRenderer.sprite);
         transform.position = starTransform;
         Empty();

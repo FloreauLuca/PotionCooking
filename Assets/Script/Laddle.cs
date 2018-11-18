@@ -24,6 +24,7 @@ public class Laddle : Draggable
 
     public override void Drop(GameObject container)
     {
+        base.Drop(container);
         container.GetComponent<Cup>().Fill(ObjectType[0]);
         transform.position = starTransform;
 

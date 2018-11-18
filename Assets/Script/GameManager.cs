@@ -15,10 +15,13 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject scoreText;
 
     [SerializeField] private GameObject winText;
+
+    private GlobalGameManager globalGameManager;
     // Use this for initialization
     void Start()
     {
-
+        Time.timeScale = 1;
+        globalGameManager = GameObject.FindGameObjectWithTag("GlobalGameManager").GetComponent<GlobalGameManager>();
     }
 
     // Update is called once per frame
@@ -27,14 +30,7 @@ public class GameManager : MonoBehaviour
 
         if (Input.GetButtonDown("Pause"))
         {
-            if (canvasPause.activeSelf)
-            {
-                canvasPause.SetActive(false);
-            }
-            else
-            {
-                canvasPause.SetActive(true);
-            }
+            Pause();
         }
     }
 
@@ -69,5 +65,24 @@ public class GameManager : MonoBehaviour
     public void Restart()
     {
         SceneManager.LoadScene("MainScene");
+    }
+
+    public void Pause()
+    {
+        if (Time.timeScale == 0 && canvasPause.activeSelf)
+        {
+            canvasPause.SetActive(false);
+            Time.timeScale = 1;
+        }
+        else if (Time.timeScale == 1 && !canvasPause.activeSelf)
+        {
+            canvasPause.SetActive(true);
+            Time.timeScale = 0;
+        }
+    }
+
+    public void Options()
+    {
+        globalGameManager.Options(canvasPause);
     }
 }

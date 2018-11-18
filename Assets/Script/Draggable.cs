@@ -1,8 +1,8 @@
-﻿using System;
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Audio;
 
 public class Draggable : MonoBehaviour
 {
@@ -15,7 +15,7 @@ public class Draggable : MonoBehaviour
     private Container container;
     protected Vector2 starTransform;
 
-    [NonSerialized]private bool dragging = false;
+    private bool dragging = false;
 
     private bool table;
 
@@ -34,6 +34,10 @@ public class Draggable : MonoBehaviour
 
 
     private Animator animator;
+
+
+    [SerializeField]
+    private AudioClip audioClip;
 
 
     // Use this for initialization
@@ -120,7 +124,11 @@ public class Draggable : MonoBehaviour
     }
 
 
-    public virtual void Drop(GameObject container) { }
+    public virtual void Drop(GameObject container)
+    {
+        container.GetComponent<AudioSource>().clip = audioClip;
+        container.GetComponent<AudioSource>().Play();
+    }
 
     public virtual void DropEmpty() { }
 

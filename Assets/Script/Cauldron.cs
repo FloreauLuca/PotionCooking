@@ -1,11 +1,11 @@
-﻿using System;
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
-using Random = UnityEngine.Random;
+
+using UnityEngine.Audio;
 
 public class Cauldron : MonoBehaviour
 {
@@ -21,7 +21,6 @@ public class Cauldron : MonoBehaviour
     private bool cooking = false;
 
     [SerializeField] private Animator sandGlassAnimator;
-
     void Start ()
     {
         foreach (SO_Potion recipe in recipeArray)
