@@ -19,7 +19,9 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 99f8395df160cfb4c9ae52249d3bc248, type: 3}
   - {fileID: 21300000, guid: bc5a70af465db594e93255b233b0b5ae, type: 3}
   - {fileID: 21300000, guid: b7e5372dac6aa93409d42cd5b19f1956, type: 3}
+  - {fileID: 21300000, guid: 104a2f0089fdaba4191e5902f20d2f33, type: 3}
   potionName: "Potion de M\xE9tamorphose"
-  panelPrefab: {fileID: 1090906723534772, guid: 5933210384d52f74b9ad91577a8c94ca,
+  panelPrefab: {fileID: 1340855839452064, guid: 30c98e51cae8fff42b3be9e124ea9724,
     type: 2}
   potionCauldron: {fileID: 21300000, guid: 64acf78de21a3b4488c83009ba4f4d9f, type: 3}
+  cookingTime: 5

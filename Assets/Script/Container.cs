@@ -23,7 +23,10 @@ public class Container : MonoBehaviour {
 
     public List<Sprite> CurrentContainObjectType
     {
-        get { return currentContainObjectType; }
+        get
+        {
+            return currentContainObjectType;
+        }
         set { currentContainObjectType = value; }
     }
 

@@ -15,11 +15,7 @@ public class Laddle : Draggable
         containerType = "Cup";
     }
 
-    void OnMouseDown()
-    {
-        ObjectType = cauldronContainer.CurrentContainObjectType;
-        Fill(ObjectType[0]);
-    }
+ 
 
     public override void DropEmpty()
     {
@@ -28,9 +24,23 @@ public class Laddle : Draggable
 
     public override void Drop(GameObject container)
     {
+        base.Drop(container);
         container.GetComponent<Cup>().Fill(ObjectType[0]);
         transform.position = starTransform;
 
         cauldron.SetContainerNull();
+    }
+    
+    void OnMouseDown()
+    {
+        ObjectType = cauldronContainer.CurrentContainObjectType;
+        if (ObjectType != null && ObjectType[0] != null)
+        {
+            Fill(ObjectType[0]);
+        }
+        else
+        {
+            Empty();
+        }
     }
 }

@@ -1,8 +1,8 @@
-﻿using System;
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Audio;
 
 public class Draggable : MonoBehaviour
 {
@@ -15,9 +15,14 @@ public class Draggable : MonoBehaviour
     private Container container;
     protected Vector2 starTransform;
 
-    [NonSerialized]private bool dragging = false;
+    private bool dragging = false;
 
     private bool table;
+
+    private static int lol;
+
+    
+    
 
 
 
@@ -29,6 +34,10 @@ public class Draggable : MonoBehaviour
 
 
     private Animator animator;
+
+
+    [SerializeField]
+    private AudioClip audioClip;
 
 
     // Use this for initialization
@@ -85,7 +94,7 @@ public class Draggable : MonoBehaviour
                 { 
 	                if (collider.tag == containerType)
 	                {
-	                    Debug.Log(collider);
+	                    //Debug.Log(collider);
 	                    collider.GetComponent<Container>().OnDropObject(objectType);
 	                    Drop(collider.gameObject);
 	                    dropped = true;
@@ -115,7 +124,11 @@ public class Draggable : MonoBehaviour
     }
 
 
-    public virtual void Drop(GameObject container) { }
+    public virtual void Drop(GameObject container)
+    {
+        container.GetComponent<AudioSource>().clip = audioClip;
+        container.GetComponent<AudioSource>().Play();
+    }
 
     public virtual void DropEmpty() { }
 
@@ -126,14 +139,18 @@ public class Draggable : MonoBehaviour
         if (potion.name == "PotionInvisibility")
         {
             spriteRenderer.sprite = potionInvisibility;
-        }
+        } else
         if (potion.name == "PotionLevitation")
         {
             spriteRenderer.sprite = potionLevitation;
-        }
+        } else
         if (potion.name == "PotionMetamorphose")
         {
             spriteRenderer.sprite = potionMetamorphose;
+        }
+        else
+        {
+            Empty();
         }
     }
 

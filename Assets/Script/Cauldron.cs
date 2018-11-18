@@ -1,11 +1,11 @@
-﻿using System;
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
-using Random = UnityEngine.Random;
+
+using UnityEngine.Audio;
 
 public class Cauldron : MonoBehaviour
 {
@@ -16,6 +16,11 @@ public class Cauldron : MonoBehaviour
     private Container container;
     [SerializeField] private GameObject[] item;
     private const int RECIPE_ARRAY_LENGTH = 3;
+    
+    private float recipeTime;
+    private bool cooking = false;
+
+    [SerializeField] private Animator sandGlassAnimator;
     void Start ()
     {
         foreach (SO_Potion recipe in recipeArray)
@@ -33,39 +38,37 @@ public class Cauldron : MonoBehaviour
 	        for (int recipeIndex = 0; recipeIndex < recipeArray.Length; recipeIndex++)
 	        {
 	            nbGoodIngredient = 0;
-	            for (int recipeIngredientIndex = 0; recipeIngredientIndex < recipeArray[recipeIndex].Recipe.Length; recipeIngredientIndex++)
+	            foreach (Sprite recipeIngredientIndex in recipeArray[recipeIndex].Recipe)
 	            {
-	                /*if (container.CurrentContainObjectType.Contains(recipeArray[recipeIndex].Recipe[recipeIngredientIndex]))
+	                foreach (Sprite ingredientIndex in container.CurrentContainObjectType)
 	                {
-	                    nbGoodIngredient++;
-	                    break;
-	                }*/
-                    for (int ingredientIndex = 0; ingredientIndex < container.CurrentContainObjectType.Count; ingredientIndex++)
-	                {
-                        if (container.CurrentContainObjectType[ingredientIndex] == recipeArray[recipeIndex].Recipe[recipeIngredientIndex])
+	                    if (ingredientIndex == recipeIngredientIndex)
 	                    {
 	                        nbGoodIngredient++;
 	                        break;
 	                    }
 	                }
-
-                }
+	            }
                 if (nbGoodIngredient == 3)
 	            {
 	                recipeSucessfulIndex = recipeIndex;
+                    Debug.Log("RecipeSucessful");
 	            }
             }
 
 	        SetContainerNull();
             if (recipeSucessfulIndex > -1)
-	        {
-	            container.CurrentContainObjectType.Add(recipeArray[recipeSucessfulIndex].PotionCauldron);
+            {
+                recipeTime = recipeArray[recipeSucessfulIndex].CookingTime;
+                StartCoroutine(Cooking());
+                sandGlassAnimator.SetFloat("Speed", 1/recipeTime);
             }
         }
 	    for (int i = 0; i < container.CurrentContainObjectType.Count; i++)
 	    {
-	            item[i].GetComponentInChildren<SpriteRenderer>().sprite = container.CurrentContainObjectType[i];
+	        item[i].GetComponentInChildren<SpriteRenderer>().sprite = container.CurrentContainObjectType[i];
 	    }
+        
 
 	}
 
@@ -76,6 +79,15 @@ public class Cauldron : MonoBehaviour
         {
             item[i].GetComponentInChildren<SpriteRenderer>().sprite = null;
         }
+    }
+
+    IEnumerator Cooking()
+    {
+        yield return new WaitForSeconds(recipeTime);
+        container.CurrentContainObjectType.Add(recipeArray[recipeSucessfulIndex].PotionCauldron);
+        cooking = false;
+
+        sandGlassAnimator.SetFloat("Speed", 0);
     }
 
 }
