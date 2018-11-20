@@ -58,7 +58,7 @@ public class Customer : MonoBehaviour
 
     private void OnMouseDown()
     {
-        if (!welcomed)
+        if (!welcomed && gameManager.GetComponent<GameManager>().Unpaused)
         {
             currentRecipe = Instantiate(potion.PanelPrefab, commandePanel.transform);
             currentRecipe.GetComponent<RecipeGUI>().Potion = potion;

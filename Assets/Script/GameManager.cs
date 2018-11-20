@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-
+    private bool unpaused = true;
     [SerializeField] private GameObject currentCamera = null;
 
     [SerializeField] private GameObject canvasPause;
@@ -17,6 +17,13 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject winText;
 
     private GlobalGameManager globalGameManager;
+
+    public bool Unpaused
+    {
+        get { return unpaused; }
+        set { unpaused = value; }
+    }
+
     // Use this for initialization
     void Start()
     {
@@ -47,7 +54,7 @@ public class GameManager : MonoBehaviour
         //Debug.Log("End");
         canvasWin.SetActive(true);
         scoreText.GetComponent<TextMeshProUGUI>().text = "Score : " + servedCustomer + " / " + totalNumberCustomer;
-        if (servedCustomer / totalNumberCustomer >= 1 / 2)
+        if (servedCustomer*2 >= totalNumberCustomer)
         {
             winText.GetComponent<TextMeshProUGUI>().text = "Win";
         }
@@ -71,11 +78,13 @@ public class GameManager : MonoBehaviour
     {
         if (Time.timeScale == 0 && canvasPause.activeSelf)
         {
+            unpaused = true;
             canvasPause.SetActive(false);
             Time.timeScale = 1;
         }
         else if (Time.timeScale == 1 && !canvasPause.activeSelf)
         {
+            unpaused = false;
             canvasPause.SetActive(true);
             Time.timeScale = 0;
         }

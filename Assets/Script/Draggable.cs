@@ -21,6 +21,7 @@ public class Draggable : MonoBehaviour
 
     private static int lol;
 
+    private GameObject gameManager;
     
     
 
@@ -53,7 +54,7 @@ public class Draggable : MonoBehaviour
     }
     protected virtual void Start ()
     {
-
+        gameManager = GameObject.FindGameObjectWithTag("GameManager");
         spriteRenderer = GetComponentInChildren<SpriteRenderer>();
         animator = GetComponentInChildren<Animator>();
         emptyCup = spriteRenderer.sprite;
@@ -120,7 +121,10 @@ public class Draggable : MonoBehaviour
     }
     private void OnMouseDrag()
     {
-        dragging = true;
+        if (gameManager.GetComponent<GameManager>().Unpaused)
+        {
+            dragging = true;
+        }
     }
 
 
