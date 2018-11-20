@@ -16,11 +16,24 @@ public class Cauldron : MonoBehaviour
     private Container container;
     [SerializeField] private GameObject[] item;
     private const int RECIPE_ARRAY_LENGTH = 3;
-    
+
+    [SerializeField] private Sprite fillInvisibility;
+    [SerializeField] private Sprite fillLevitation;
+    [SerializeField] private Sprite fillMetamorphose;
+    private Sprite emptySprite;
     private float recipeTime;
     private bool cooking = false;
 
     [SerializeField] private Animator sandGlassAnimator;
+
+    [SerializeField] private SpriteRenderer spriteRenderer;
+
+    [SerializeField] private ParticleSystem bubbleInvisibility;
+    [SerializeField] private ParticleSystem bubbleLevitation;
+    [SerializeField] private ParticleSystem bubbleMetamorphose;
+    [SerializeField] private GameObject bubbleSpawner;
+
+
     void Start ()
     {
         foreach (SO_Potion recipe in recipeArray)
@@ -28,6 +41,7 @@ public class Cauldron : MonoBehaviour
             recipe.CurrentPotionCup = recipe.PotionCupSprites[Random.Range(0, recipe.PotionCupSprites.Length)];
         }
         container = GetComponent<Container>();
+        emptySprite = spriteRenderer.sprite;
     }
 	
 	// Update is called once per frame
@@ -67,9 +81,38 @@ public class Cauldron : MonoBehaviour
 	    for (int i = 0; i < container.CurrentContainObjectType.Count; i++)
 	    {
 	        item[i].GetComponentInChildren<SpriteRenderer>().sprite = container.CurrentContainObjectType[i];
-	    }
-        
+        }
+        Debug.Log(container.CurrentContainObjectType.Any());
+	    if (container.CurrentContainObjectType.Any())
+	    {
 
+	        if (container.CurrentContainObjectType[0].name == "PotionInvisibility")
+	        {
+	            spriteRenderer.sprite = fillInvisibility;
+
+            }
+	        else if (container.CurrentContainObjectType[0].name == "PotionLevitation")
+	        {
+	            spriteRenderer.sprite = fillLevitation;
+
+            }
+	        else if (container.CurrentContainObjectType[0].name == "PotionMetamorphose")
+	        {
+	            spriteRenderer.sprite = fillMetamorphose;
+
+	            Instantiate(bubbleMetamorphose, bubbleSpawner.transform);
+            }
+	        else
+	        {
+	            spriteRenderer.sprite = emptySprite;
+
+
+            }
+	    }
+	    else
+	    {
+	        spriteRenderer.sprite = emptySprite;
+        }
 	}
 
     public void SetContainerNull()
@@ -83,6 +126,8 @@ public class Cauldron : MonoBehaviour
 
     IEnumerator Cooking()
     {
+
+        Instantiate(bubbleInvisibility, bubbleSpawner.transform);
         yield return new WaitForSeconds(recipeTime);
         container.CurrentContainObjectType.Add(recipeArray[recipeSucessfulIndex].PotionCauldron);
         cooking = false;

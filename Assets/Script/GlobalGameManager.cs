@@ -74,7 +74,7 @@ public class GlobalGameManager : MonoBehaviour
 	    {
 	        Quit();
 	    }
-        Debug.Log(Random.Range(0,3));
+        //Debug.Log(Random.Range(0,3));
     }
 
 

@@ -1195,6 +1195,34 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 216707796}
   m_CullTransparentMesh: 0
+--- !u!1 &237890785
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 237890786}
+  m_Layer: 10
+  m_Name: BubbleSpawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &237890786
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 237890785}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.047, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1640670772}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &265641978
 GameObject:
   m_ObjectHideFlags: 0
@@ -5813,8 +5841,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1360321753}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.005, y: -0.071, z: 0}
-  m_LocalScale: {x: 0.09922, y: 0.09922, z: 0.496}
+  m_LocalPosition: {x: -0.005, y: 0.038, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1640670772}
   m_RootOrder: 0
@@ -5854,7 +5882,7 @@ SpriteRenderer:
   m_SortingLayerID: -671751029
   m_SortingLayer: 2
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 5ce0f3fea8602764db0a118c0c78ae2f, type: 3}
+  m_Sprite: {fileID: 21300000, guid: b2ce246764a47fa4c82faf79b0775f3f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -6914,6 +6942,7 @@ Transform:
   - {fileID: 430225156}
   - {fileID: 635502289}
   - {fileID: 2034795853}
+  - {fileID: 237890786}
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -6936,7 +6965,18 @@ MonoBehaviour:
   - {fileID: 1443560531}
   - {fileID: 538072920}
   - {fileID: 428174317}
+  fillInvisibility: {fileID: 21300000, guid: 36f2d493995b2144db7e6da46885bebd, type: 3}
+  fillLevitation: {fileID: 21300000, guid: 690092a29bffec248b5bd3b22a6721ab, type: 3}
+  fillMetamorphose: {fileID: 21300000, guid: b3ce27f91a8cf5946874907038ec06e9, type: 3}
   sandGlassAnimator: {fileID: 1666099983}
+  spriteRenderer: {fileID: 1360321755}
+  bubbleInvisibility: {fileID: 198444130561883830, guid: 01c294f272b691840813f08d33af5b51,
+    type: 2}
+  bubbleLevitation: {fileID: 198214599503159182, guid: e3173a07f1e94be48a7fb0f506817a10,
+    type: 2}
+  bubbleMetamorphose: {fileID: 198926767741539660, guid: 3bb07b11a7a9f5846a350fe8fce4f253,
+    type: 2}
+  bubbleSpawner: {fileID: 237890785}
 --- !u!82 &1640670774
 AudioSource:
   m_ObjectHideFlags: 0
@@ -8993,8 +9033,8 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2034795852}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.235, z: 0}
+  m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 0, y: -0.304, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1640670772}
@@ -9136,7 +9176,7 @@ ParticleSystem:
     startLifetime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0.6
+      scalar: 1
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -9305,7 +9345,7 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 1
+      scalar: 1.5
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -9680,8 +9720,8 @@ ParticleSystem:
   ShapeModule:
     serializedVersion: 5
     enabled: 1
-    type: 0
-    angle: 21.791342
+    type: 4
+    angle: 37.15
     length: 5
     boxThickness: {x: 0, y: 0, z: 0}
     radiusThickness: 1
@@ -9711,7 +9751,7 @@ ParticleSystem:
     sphericalDirectionAmount: 0
     randomPositionAmount: 0
     radius:
-      value: 0.1
+      value: 0.66
       mode: 0
       spread: 0
       speed:
@@ -11087,7 +11127,7 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
   ForceModule:
-    enabled: 1
+    enabled: 0
     x:
       serializedVersion: 2
       minMaxState: 0
