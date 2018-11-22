@@ -87,6 +87,7 @@ public class Customer : MonoBehaviour
             GetComponentInParent<SpawnCustomer>().HappyCustomer();
             audioSource.clip = drinkAudioClip[Random.Range(0, drinkAudioClip.Length)];
             audioSource.Play();
+            Destroy(currentRecipe);
             StartCoroutine(audioWait());
         }
         else
@@ -110,7 +111,6 @@ public class Customer : MonoBehaviour
     {
         yield return new WaitForSeconds(1);
 
-        Destroy(currentRecipe);
         Destroy(gameObject);
     }
 
