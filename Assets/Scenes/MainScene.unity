@@ -321,7 +321,7 @@ GameObject:
   - component: {fileID: 80235512}
   - component: {fileID: 80235513}
   m_Layer: 0
-  m_Name: Sang
+  m_Name: BloodSprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -334,8 +334,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 80235511}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: -0.081, z: 0}
+  m_LocalScale: {x: 0.1, y: 0.1, z: 1}
   m_Children: []
   m_Father: {fileID: 1493899986}
   m_RootOrder: 0
@@ -375,7 +375,7 @@ SpriteRenderer:
   m_SortingLayerID: -671751029
   m_SortingLayer: 2
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 7b86612a897c4254ca80cc475547b5a0, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 0ad119dcec6d0f841be720b6f0ff64b4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1389,7 +1389,7 @@ GameObject:
   - component: {fileID: 298950804}
   - component: {fileID: 298950803}
   m_Layer: 0
-  m_Name: UnicornBag
+  m_Name: BagEyes
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1434,7 +1434,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.018457443, y: 0.05537224}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -1445,7 +1445,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.68, y: 0.71}
+  m_Size: {x: 0.96301347, y: 1.0422335}
   m_EdgeRadius: 0
 --- !u!1 &352909433
 GameObject:
@@ -1696,7 +1696,7 @@ Transform:
   m_GameObject: {fileID: 428174317}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0.006, y: 0.029, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 0}
+  m_LocalScale: {x: 0.1, y: 0.1, z: 0}
   m_Children: []
   m_Father: {fileID: 580707590}
   m_RootOrder: 0
@@ -1741,7 +1741,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.48, y: 0.48}
+  m_Size: {x: 5.12, y: 5.12}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 0
@@ -1868,7 +1868,7 @@ GameObject:
   - component: {fileID: 476130746}
   - component: {fileID: 476130747}
   m_Layer: 0
-  m_Name: SacChauveSouris
+  m_Name: BagWingsSprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1881,8 +1881,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 476130745}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 1}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: 0.2, z: 1}
+  m_LocalScale: {x: 0.2, y: 0.2, z: 1}
   m_Children: []
   m_Father: {fileID: 1586310888}
   m_RootOrder: 0
@@ -1922,7 +1922,7 @@ SpriteRenderer:
   m_SortingLayerID: -671751029
   m_SortingLayer: 2
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 1dc740f713397e544b5e3c705529b5f2, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 0fd28848516c73140b91d2b342bb45cb, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -2037,7 +2037,7 @@ Transform:
   m_GameObject: {fileID: 538072920}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0.006, y: 0.029, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 0}
+  m_LocalScale: {x: 0.1, y: 0.1, z: 0}
   m_Children: []
   m_Father: {fileID: 1684158770}
   m_RootOrder: 0
@@ -2082,7 +2082,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.48, y: 0.48}
+  m_Size: {x: 5.12, y: 5.12}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 0
@@ -2098,7 +2098,7 @@ GameObject:
   - component: {fileID: 571420603}
   - component: {fileID: 571420604}
   m_Layer: 0
-  m_Name: Lait
+  m_Name: MilkSprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2111,8 +2111,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 571420602}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -0.011, y: -0.065, z: 0}
+  m_LocalScale: {x: 0.1, y: 0.1, z: 1}
   m_Children: []
   m_Father: {fileID: 1559738336}
   m_RootOrder: 0
@@ -2152,7 +2152,7 @@ SpriteRenderer:
   m_SortingLayerID: -671751029
   m_SortingLayer: 2
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 8fd0a5c85894e294e88c6aa27310674f, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 5dbcb2412712a5d4995d659abf16e2cd, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -2654,7 +2654,7 @@ GameObject:
   - component: {fileID: 627565419}
   - component: {fileID: 627565421}
   m_Layer: 10
-  m_Name: "Bi\xE8re"
+  m_Name: BierSprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2668,7 +2668,7 @@ Transform:
   m_GameObject: {fileID: 627565418}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.1, y: 0.1, z: 1}
   m_Children: []
   m_Father: {fileID: 1843753359}
   m_RootOrder: 0
@@ -2708,7 +2708,7 @@ SpriteRenderer:
   m_SortingLayerID: -671751029
   m_SortingLayer: 2
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 9b306496f1deaed46910913afc4348bf, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 815dcba003f99e54785be8bc2821b1ff, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -3076,7 +3076,7 @@ GameObject:
   - component: {fileID: 693712866}
   - component: {fileID: 693712865}
   m_Layer: 0
-  m_Name: BonesBag
+  m_Name: BagBones
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3089,7 +3089,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 693712863}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -9.53, y: 0.19, z: 0}
+  m_LocalPosition: {x: -9.53, y: 0.37, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2135562187}
@@ -3121,7 +3121,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.030762285, y: -0.012305021}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -3132,7 +3132,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.68, y: 0.71}
+  m_Size: {x: 0.93840367, y: 1.0299276}
   m_EdgeRadius: 0
 --- !u!1 &708692620
 GameObject:
@@ -3417,7 +3417,7 @@ GameObject:
   - component: {fileID: 754744621}
   - component: {fileID: 754744622}
   m_Layer: 10
-  m_Name: Cup
+  m_Name: GobletSprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3430,8 +3430,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 754744620}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -0.063, y: 0.005, z: 0}
+  m_LocalScale: {x: 0.07, y: 0.07, z: 1}
   m_Children: []
   m_Father: {fileID: 868049931}
   m_RootOrder: 0
@@ -3471,7 +3471,7 @@ SpriteRenderer:
   m_SortingLayerID: -671751029
   m_SortingLayer: 2
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 629b85b5fa3c35440b8c8b52f6d3b469, type: 3}
+  m_Sprite: {fileID: 21300000, guid: e5c96b341193da749bd790de3e39f5e8, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -3744,7 +3744,7 @@ GameObject:
   - component: {fileID: 868049929}
   - component: {fileID: 868049933}
   m_Layer: 10
-  m_Name: Cup
+  m_Name: Goblet
   m_TagString: Cup
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3765,9 +3765,9 @@ MonoBehaviour:
   raycastLayerMask:
     serializedVersion: 2
     m_Bits: 1024
-  potionInvisibility: {fileID: 21300000, guid: aef00bd292139e24dad27c2ede270654, type: 3}
-  potionLevitation: {fileID: 21300000, guid: 070cc76dec39d99498b373655139982d, type: 3}
-  potionMetamorphose: {fileID: 21300000, guid: b7e5372dac6aa93409d42cd5b19f1956, type: 3}
+  potionInvisibility: {fileID: 21300000, guid: fbfa539169a21d2469f23574da114a31, type: 3}
+  potionLevitation: {fileID: 21300000, guid: 7f5e24185692f8b43bc3516ae94471cc, type: 3}
+  potionMetamorphose: {fileID: 21300000, guid: 184b91a4cc51b9940ab9f6866598474e, type: 3}
   audioClip: {fileID: 8300000, guid: 4279525fe43f832488d9279d9a20dee4, type: 3}
 --- !u!61 &868049930
 BoxCollider2D:
@@ -4460,7 +4460,7 @@ Transform:
   m_GameObject: {fileID: 1127495191}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
+  m_LocalScale: {x: 0.1, y: 0.1, z: 1}
   m_Children: []
   m_Father: {fileID: 1702272900}
   m_RootOrder: 0
@@ -4500,7 +4500,7 @@ SpriteRenderer:
   m_SortingLayerID: -671751029
   m_SortingLayer: 2
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: c8b01f49f38cc6b40b1df1e86a2ea6e6, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 87a052b217bce1b488384c5fb7dd7d24, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -5828,7 +5828,7 @@ GameObject:
   - component: {fileID: 1360321754}
   - component: {fileID: 1360321755}
   m_Layer: 10
-  m_Name: Chaudron
+  m_Name: CauldronSprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5841,8 +5841,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1360321753}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.005, y: 0.038, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0.007, y: -0.067, z: 0}
+  m_LocalScale: {x: 0.05, y: 0.05, z: 1}
   m_Children: []
   m_Father: {fileID: 1640670772}
   m_RootOrder: 0
@@ -5882,7 +5882,7 @@ SpriteRenderer:
   m_SortingLayerID: -671751029
   m_SortingLayer: 2
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: b2ce246764a47fa4c82faf79b0775f3f, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 5c22e1129ecafd545b9ea6b718ed3fbb, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -6157,7 +6157,7 @@ Transform:
   m_GameObject: {fileID: 1443560531}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0.006, y: 0.029, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 0}
+  m_LocalScale: {x: 0.1, y: 0.1, z: 0}
   m_Children: []
   m_Father: {fileID: 90237320}
   m_RootOrder: 0
@@ -6202,7 +6202,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.48, y: 0.48}
+  m_Size: {x: 5.12, y: 5.12}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 0
@@ -6232,7 +6232,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1493899985}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -12.34, y: 1.63, z: 0}
+  m_LocalPosition: {x: -12.5, y: 1.72, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 1}
   m_Children:
   - {fileID: 80235512}
@@ -6559,7 +6559,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1559738335}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -11.07, y: 1.64, z: 0}
+  m_LocalPosition: {x: -11.278, y: 1.683, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 1}
   m_Children:
   - {fileID: 571420603}
@@ -6723,7 +6723,7 @@ GameObject:
   - component: {fileID: 1586310890}
   - component: {fileID: 1586310889}
   m_Layer: 0
-  m_Name: BatBag
+  m_Name: BagWings
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6768,7 +6768,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.018457294, y: -0.0061523914}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -6779,7 +6779,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.68, y: 0.71}
+  m_Size: {x: 0.88918376, y: 1.0176233}
   m_EdgeRadius: 0
 --- !u!1 &1605592412
 GameObject:
@@ -6921,7 +6921,7 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.086164474}
+  m_Offset: {x: 0, y: -0.03}
   serializedVersion: 2
   m_Radius: 0.25299415
 --- !u!4 &1640670772
@@ -6965,9 +6965,9 @@ MonoBehaviour:
   - {fileID: 1443560531}
   - {fileID: 538072920}
   - {fileID: 428174317}
-  fillInvisibility: {fileID: 21300000, guid: 36f2d493995b2144db7e6da46885bebd, type: 3}
-  fillLevitation: {fileID: 21300000, guid: 690092a29bffec248b5bd3b22a6721ab, type: 3}
-  fillMetamorphose: {fileID: 21300000, guid: b3ce27f91a8cf5946874907038ec06e9, type: 3}
+  fillInvisibility: {fileID: 21300000, guid: cce174aec5d724548804544871856f4d, type: 3}
+  fillLevitation: {fileID: 21300000, guid: 2ab8bb2d4cfda9540bfee23016a7d59d, type: 3}
+  fillMetamorphose: {fileID: 21300000, guid: fccc373a260aa9844a39912a6f6ebb6c, type: 3}
   sandGlassAnimator: {fileID: 1666099983}
   spriteRenderer: {fileID: 1360321755}
   bubbleInvisibility: {fileID: 198444130561883830, guid: 01c294f272b691840813f08d33af5b51,
@@ -7383,9 +7383,9 @@ MonoBehaviour:
   raycastLayerMask:
     serializedVersion: 2
     m_Bits: 1024
-  potionInvisibility: {fileID: 21300000, guid: f58817ea80bcab94896cdb16fd1d7c63, type: 3}
-  potionLevitation: {fileID: 21300000, guid: 645e3420906ba5d44bcbeedffa2f38e4, type: 3}
-  potionMetamorphose: {fileID: 21300000, guid: 104a2f0089fdaba4191e5902f20d2f33, type: 3}
+  potionInvisibility: {fileID: 21300000, guid: 75188ec808903364d9737d9b18f4e939, type: 3}
+  potionLevitation: {fileID: 21300000, guid: b3a3efd307e2d264683f360bb5ed26e9, type: 3}
+  potionMetamorphose: {fileID: 21300000, guid: 4d9a4ea2dd71102439706604d82b3656, type: 3}
   audioClip: {fileID: 8300000, guid: 4279525fe43f832488d9279d9a20dee4, type: 3}
 --- !u!114 &1702272902
 MonoBehaviour:
@@ -7911,9 +7911,9 @@ MonoBehaviour:
   raycastLayerMask:
     serializedVersion: 2
     m_Bits: 1024
-  potionInvisibility: {fileID: 21300000, guid: 7d87d82f1edca744bb4802c9d6c10199, type: 3}
-  potionLevitation: {fileID: 21300000, guid: 4fe638b16bb210b4e8446030244c1989, type: 3}
-  potionMetamorphose: {fileID: 21300000, guid: 99f8395df160cfb4c9ae52249d3bc248, type: 3}
+  potionInvisibility: {fileID: 21300000, guid: 87115582e2429bc418887c5453315f98, type: 3}
+  potionLevitation: {fileID: 21300000, guid: f0eed113d20a484449dcfe38d8119be9, type: 3}
+  potionMetamorphose: {fileID: 21300000, guid: 7abd646431f457844b312c8275bb4c43, type: 3}
   audioClip: {fileID: 8300000, guid: 4279525fe43f832488d9279d9a20dee4, type: 3}
 --- !u!114 &1843753362
 MonoBehaviour:
@@ -8085,7 +8085,7 @@ GameObject:
   - component: {fileID: 1894805994}
   - component: {fileID: 1894805995}
   m_Layer: 10
-  m_Name: Bouteille
+  m_Name: BottleSprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8098,8 +8098,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1894805993}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -0.017, y: -0.075, z: 0}
+  m_LocalScale: {x: 0.1, y: 0.1, z: 1}
   m_Children: []
   m_Father: {fileID: 1907105952}
   m_RootOrder: 0
@@ -8139,7 +8139,7 @@ SpriteRenderer:
   m_SortingLayerID: -671751029
   m_SortingLayer: 2
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: a9f43004439ec7e46a7b1124377c8646, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 7d1e40cbbf592c74681557824cd3d552, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -8321,9 +8321,9 @@ MonoBehaviour:
   raycastLayerMask:
     serializedVersion: 2
     m_Bits: 1024
-  potionInvisibility: {fileID: 21300000, guid: dcc3a2524b9294f4ba18a8a8bc5dc5d4, type: 3}
-  potionLevitation: {fileID: 21300000, guid: 889fb4d986ba0c946941526f41d6dba8, type: 3}
-  potionMetamorphose: {fileID: 21300000, guid: bc5a70af465db594e93255b233b0b5ae, type: 3}
+  potionInvisibility: {fileID: 21300000, guid: f4f477086adcecb4e8e12dbc43724728, type: 3}
+  potionLevitation: {fileID: 21300000, guid: be8800e04e083f34fb633fc0a03805d7, type: 3}
+  potionMetamorphose: {fileID: 21300000, guid: 9a04222ac5b5b5f4281d55196b35ed08, type: 3}
   audioClip: {fileID: 8300000, guid: 4279525fe43f832488d9279d9a20dee4, type: 3}
 --- !u!61 &1907105954
 BoxCollider2D:
@@ -8537,7 +8537,7 @@ GameObject:
   - component: {fileID: 1909888700}
   - component: {fileID: 1909888701}
   m_Layer: 0
-  m_Name: SacLicorne
+  m_Name: BagEyesSprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8550,8 +8550,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1909888699}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 1}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0.02, y: 0.09, z: 1}
+  m_LocalScale: {x: 0.2, y: 0.2, z: 1}
   m_Children: []
   m_Father: {fileID: 298950802}
   m_RootOrder: 0
@@ -8591,7 +8591,7 @@ SpriteRenderer:
   m_SortingLayerID: -671751029
   m_SortingLayer: 2
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 41810842cfde62c40b8b0b086c0eb3cd, type: 3}
+  m_Sprite: {fileID: 21300000, guid: cf5326be9856fb04a9f2d87f1be99ec1, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -8945,7 +8945,7 @@ GameObject:
   - component: {fileID: 1986576602}
   - component: {fileID: 1986576603}
   m_Layer: 9
-  m_Name: Louche
+  m_Name: LadleSprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8959,7 +8959,7 @@ Transform:
   m_GameObject: {fileID: 1986576601}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.1, y: 0.1, z: 1}
   m_Children: []
   m_Father: {fileID: 2098601386}
   m_RootOrder: 0
@@ -8999,7 +8999,7 @@ SpriteRenderer:
   m_SortingLayerID: -671751029
   m_SortingLayer: 2
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 7de970f2376da0541a500ed623e41cdb, type: 3}
+  m_Sprite: {fileID: 21300000, guid: ca519014def47f042bb416fb67cb9899, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -13847,7 +13847,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: -0.0016831756}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -13858,7 +13858,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.4, y: 0.4}
+  m_Size: {x: 0.4, y: 0.50435674}
   m_EdgeRadius: 0
 --- !u!4 &2098601386
 Transform:
@@ -13867,7 +13867,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2098601383}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.1, y: 0.1, z: 1}
+  m_LocalPosition: {x: 0.1, y: 0.161, z: 1}
   m_LocalScale: {x: 0.6666667, y: 0.6666667, z: 1}
   m_Children:
   - {fileID: 1986576602}
@@ -13889,9 +13889,9 @@ MonoBehaviour:
   raycastLayerMask:
     serializedVersion: 2
     m_Bits: 1024
-  potionInvisibility: {fileID: 21300000, guid: 9205c3cf4a7bc0246beeb6762fed3e5d, type: 3}
-  potionLevitation: {fileID: 21300000, guid: d7041642437f55244bc48ed313c296f7, type: 3}
-  potionMetamorphose: {fileID: 21300000, guid: 056d169dc8396324e968f33b35429518, type: 3}
+  potionInvisibility: {fileID: 21300000, guid: 05ca15efde76ede42b2aeb668d4c5973, type: 3}
+  potionLevitation: {fileID: 21300000, guid: 5e32dda5b701ca2438c872a49d9f81b8, type: 3}
+  potionMetamorphose: {fileID: 21300000, guid: 25eed14b3e611bc409db5f734892a8f8, type: 3}
   audioClip: {fileID: 8300000, guid: 0f0ae1684d0430d4dbeea7fc10dcd9fc, type: 3}
 --- !u!1 &2113636665
 GameObject:
@@ -14028,7 +14028,7 @@ GameObject:
   - component: {fileID: 2135562187}
   - component: {fileID: 2135562188}
   m_Layer: 0
-  m_Name: SacOs
+  m_Name: BagBonesSprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -14042,7 +14042,7 @@ Transform:
   m_GameObject: {fileID: 2135562186}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 1}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.2, y: 0.2, z: 1}
   m_Children: []
   m_Father: {fileID: 693712864}
   m_RootOrder: 0
@@ -14082,7 +14082,7 @@ SpriteRenderer:
   m_SortingLayerID: -671751029
   m_SortingLayer: 2
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 19a63072d7002ec4d8dbd096754e84b7, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 8caa8efc79ffd2e4cab0f786ec5e71fa, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
