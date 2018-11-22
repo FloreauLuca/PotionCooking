@@ -12,14 +12,14 @@ MonoBehaviour:
   m_Name: Metamorph
   m_EditorClassIdentifier: 
   recipe:
-  - {fileID: 21300000, guid: fae6db9d62bfb8e4999f6ebea69328c9, type: 3}
-  - {fileID: 21300000, guid: 8fd0a5c85894e294e88c6aa27310674f, type: 3}
-  - {fileID: 21300000, guid: 3b575607cb0e855489cae5e09ec6017c, type: 3}
+  - {fileID: 21300000, guid: 0ad119dcec6d0f841be720b6f0ff64b4, type: 3}
+  - {fileID: 21300000, guid: d1bc035186e0d184d8070729a41521c7, type: 3}
+  - {fileID: 21300000, guid: 241f675849aeaaa4ba5e672a7b73c9a5, type: 3}
   potionCupSprites:
-  - {fileID: 21300000, guid: 99f8395df160cfb4c9ae52249d3bc248, type: 3}
-  - {fileID: 21300000, guid: bc5a70af465db594e93255b233b0b5ae, type: 3}
-  - {fileID: 21300000, guid: b7e5372dac6aa93409d42cd5b19f1956, type: 3}
-  - {fileID: 21300000, guid: 104a2f0089fdaba4191e5902f20d2f33, type: 3}
+  - {fileID: 21300000, guid: 7abd646431f457844b312c8275bb4c43, type: 3}
+  - {fileID: 21300000, guid: 9a04222ac5b5b5f4281d55196b35ed08, type: 3}
+  - {fileID: 21300000, guid: 184b91a4cc51b9940ab9f6866598474e, type: 3}
+  - {fileID: 21300000, guid: 4d9a4ea2dd71102439706604d82b3656, type: 3}
   potionName: "Potion de M\xE9tamorphose"
   panelPrefab: {fileID: 1340855839452064, guid: 30c98e51cae8fff42b3be9e124ea9724,
     type: 2}

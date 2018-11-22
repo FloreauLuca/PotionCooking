@@ -220,7 +220,12 @@ MonoBehaviour:
   commandePanel: {fileID: 0}
   potion: {fileID: 11400000, guid: ed6870c72ce00b14782029d1dc183da9, type: 2}
   waitingLimit: 60
-  askWaitingLimit: 60
+  askWaitingLimit: 90
+  drinkAudioClip:
+  - {fileID: 8300000, guid: 64c30e6260e42d64081fdbd5c1181f74, type: 3}
+  - {fileID: 8300000, guid: e4c5255a1ed1ec34da227436e4d3a2dd, type: 3}
+  - {fileID: 8300000, guid: aa34b9ff27548d84f8bb53cee3487a5a, type: 3}
+  badReception: {fileID: 8300000, guid: fc24d7b22e38c6441a0c71c846d1cbbe, type: 3}
 --- !u!212 &212203494188382004
 SpriteRenderer:
   m_ObjectHideFlags: 1

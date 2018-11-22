@@ -38,7 +38,8 @@ public class SpawnCustomer : MonoBehaviour {
     public void SpawnCustomers()
     {
         waitingLine.NewCustomer(customersPrefab[Random.Range(0, customersPrefab.Length)], potionPrefab[Random.Range(0, potionPrefab.Length)]);
-        //Debug.Log("New Customer");
+        //Debug.Log((customersPrefab.Length));
+        
     }
 
     IEnumerator WaitAndSummon()
