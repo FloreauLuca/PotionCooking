@@ -19,6 +19,10 @@ public class Customer : MonoBehaviour
     [SerializeField] private float askWaitingLimit;
 
     private GameObject parent;
+
+    private AudioSource audioSource;
+    [SerializeField] private AudioClip[] drinkAudioClip;
+    [SerializeField] private AudioClip badReception;
     public SO_Potion Potion
     {
         get { return potion; }
@@ -33,6 +37,7 @@ public class Customer : MonoBehaviour
         parent.GetComponent<WaitingLine>().Customers.Add(gameObject);
         parent.GetComponent<WaitingLine>().LineOrganization();
         commandePanel = GameObject.Find("OrderPanel");
+        audioSource = GetComponent<AudioSource>();
     }
 
     private void Update()
@@ -58,7 +63,7 @@ public class Customer : MonoBehaviour
 
     private void OnMouseDown()
     {
-        if (!welcomed)
+        if (!welcomed && gameManager.GetComponent<GameManager>().Unpaused)
         {
             currentRecipe = Instantiate(potion.PanelPrefab, commandePanel.transform);
             currentRecipe.GetComponent<RecipeGUI>().Potion = potion;
@@ -80,13 +85,15 @@ public class Customer : MonoBehaviour
             parent.GetComponent<WaitingLine>().Customers.Remove(gameObject);
             parent.GetComponent<WaitingLine>().LineOrganization();
             GetComponentInParent<SpawnCustomer>().HappyCustomer();
-            Destroy(currentRecipe);
-            Destroy(gameObject);
+            audioSource.clip = drinkAudioClip[Random.Range(0, drinkAudioClip.Length)];
+            audioSource.Play();
+            StartCoroutine(audioWait());
         }
         else
         {
-
             container.CurrentContainObjectType = new List<Sprite>();
+            audioSource.clip = badReception;
+            audioSource.Play();
         }
     }
 
@@ -95,6 +102,14 @@ public class Customer : MonoBehaviour
         parent.GetComponent<WaitingLine>().Customers.Remove(gameObject);
         parent.GetComponent<WaitingLine>().LineOrganization();
         GetComponentInParent<SpawnCustomer>().MadCustomer();
+        Destroy(currentRecipe);
+        Destroy(gameObject);
+    }
+
+    IEnumerator audioWait()
+    {
+        yield return new WaitForSeconds(1);
+
         Destroy(currentRecipe);
         Destroy(gameObject);
     }

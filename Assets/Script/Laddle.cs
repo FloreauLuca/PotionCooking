@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class Laddle : Draggable
@@ -34,7 +35,8 @@ public class Laddle : Draggable
     void OnMouseDown()
     {
         ObjectType = cauldronContainer.CurrentContainObjectType;
-        if (ObjectType != null && ObjectType[0] != null)
+        Debug.Log(ObjectType.Any());
+        if (ObjectType.Any())
         {
             Fill(ObjectType[0]);
         }

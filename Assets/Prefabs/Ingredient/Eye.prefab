@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 61443453287846558}
   - component: {fileID: 114854551864670420}
   m_Layer: 0
-  m_Name: Unicorn
+  m_Name: Eye
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -52,7 +52,7 @@ Transform:
   m_GameObject: {fileID: 1634895262345334}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.1, y: 0.1, z: 1}
   m_Children: []
   m_Father: {fileID: 4777845566140112}
   m_RootOrder: 0
@@ -64,7 +64,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1447099452793470}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 12.978512, y: 1.0936797, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4462118645408468}
@@ -108,7 +108,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectType:
-  - {fileID: 21300000, guid: fae6db9d62bfb8e4999f6ebea69328c9, type: 3}
+  - {fileID: 21300000, guid: 068ca83348057a34eb12bf5c25a3bd5d, type: 3}
   raycastLayerMask:
     serializedVersion: 2
     m_Bits: 1024
@@ -151,7 +151,7 @@ SpriteRenderer:
   m_SortingLayerID: -671751029
   m_SortingLayer: 2
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: fae6db9d62bfb8e4999f6ebea69328c9, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 068ca83348057a34eb12bf5c25a3bd5d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

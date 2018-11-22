@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Liquide : Draggable{
     // Use this for initialization
+
     protected override void Start()
     {
         base.Start();
@@ -20,6 +21,7 @@ public class Liquide : Draggable{
     {
 
         base.Drop(container);
+        animator.SetTrigger("Pouring");
         transform.position = starTransform;
     }
 }

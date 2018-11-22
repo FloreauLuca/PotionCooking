@@ -8,9 +8,9 @@ public class GlobalGameManager : MonoBehaviour
 {
     private int option;
     private bool scroll;
-    private float volumeMusic;
-    private float volumeSound;
-    private float volumeMaster;
+    private float volumeMusic = 0.5f;
+    private float volumeSound = 0.5f;
+    private float volumeMaster = 0.5f;
     private float sensitivity;
 
     [SerializeField] private GameObject optionCanvas;
@@ -27,19 +27,27 @@ public class GlobalGameManager : MonoBehaviour
     public float VolumeMusic
     {
         get { return volumeMusic; }
-        set { volumeMusic = value; }
+        set
+        {
+            volumeMusic = value;
+            audioMixer.SetFloat("musicVolume", Mathf.Log(VolumeMusic) * 20);
+        }
     }
 
     public float VolumeSound
     {
         get { return volumeSound; }
-        set { volumeSound = value; }
+        set { volumeSound = value;
+            audioMixer.SetFloat("dropObjectSoundVolume", Mathf.Log(VolumeSound) * 20);
+        }
     }
 
     public float VolumeMaster
     {
         get { return volumeMaster; }
-        set { volumeMaster = value; }
+        set { volumeMaster = value;
+            audioMixer.SetFloat("masterVolume", Mathf.Log(VolumeMaster) * 20);
+        }
     }
 
     public float Sensitivity
@@ -55,20 +63,18 @@ public class GlobalGameManager : MonoBehaviour
             if (globalGameManager != gameObject)
                 Destroy(gameObject);
         }
+        ApplyOptions();
 		DontDestroyOnLoad(gameObject);
 
     }
 	
 	// Update is called once per frame
 	void Update () {
-
-
 	    if (Input.GetButtonDown("Cancel"))
 	    {
 	        Quit();
-
 	    }
-
+        //Debug.Log(Random.Range(0,3));
     }
 
 

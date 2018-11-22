@@ -12,14 +12,14 @@ MonoBehaviour:
   m_Name: Invisibility
   m_EditorClassIdentifier: 
   recipe:
-  - {fileID: 21300000, guid: 7b86612a897c4254ca80cc475547b5a0, type: 3}
-  - {fileID: 21300000, guid: 3b575607cb0e855489cae5e09ec6017c, type: 3}
-  - {fileID: 21300000, guid: 8fd0a5c85894e294e88c6aa27310674f, type: 3}
+  - {fileID: 21300000, guid: d1bc035186e0d184d8070729a41521c7, type: 3}
+  - {fileID: 21300000, guid: 5dbcb2412712a5d4995d659abf16e2cd, type: 3}
+  - {fileID: 21300000, guid: 068ca83348057a34eb12bf5c25a3bd5d, type: 3}
   potionCupSprites:
-  - {fileID: 21300000, guid: 7d87d82f1edca744bb4802c9d6c10199, type: 3}
-  - {fileID: 21300000, guid: dcc3a2524b9294f4ba18a8a8bc5dc5d4, type: 3}
-  - {fileID: 21300000, guid: aef00bd292139e24dad27c2ede270654, type: 3}
-  - {fileID: 21300000, guid: f58817ea80bcab94896cdb16fd1d7c63, type: 3}
+  - {fileID: 21300000, guid: 87115582e2429bc418887c5453315f98, type: 3}
+  - {fileID: 21300000, guid: f4f477086adcecb4e8e12dbc43724728, type: 3}
+  - {fileID: 21300000, guid: fbfa539169a21d2469f23574da114a31, type: 3}
+  - {fileID: 21300000, guid: 75188ec808903364d9737d9b18f4e939, type: 3}
   potionName: "Potion d'Invisibilit\xE9"
   panelPrefab: {fileID: 1340855839452064, guid: 30c98e51cae8fff42b3be9e124ea9724,
     type: 2}

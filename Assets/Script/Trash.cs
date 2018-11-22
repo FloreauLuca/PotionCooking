@@ -5,14 +5,20 @@ using UnityEngine;
 public class Trash : MonoBehaviour
 {
     private Cauldron cauldron;
+
+    private GameObject gameManager;
 	// Use this for initialization
 	void Start ()
 	{
+        gameManager = GameObject.FindGameObjectWithTag("GameManager");
 	    cauldron = GetComponentInParent<Cauldron>();
 	}
 	
     private void OnMouseDown()
     {
-        cauldron.SetContainerNull();
+        if (gameManager.GetComponent<GameManager>().Unpaused)
+        {
+            cauldron.SetContainerNull();
+        }
     }
 }

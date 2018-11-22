@@ -5,7 +5,7 @@ using UnityEngine.EventSystems;
 using TMPro;
 using UnityEngine.UI;
 
-public class RecipeGUI : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
+public class RecipeGUI : MonoBehaviour, IPointerDownHandler
 {
     private Animator animator;
 
@@ -16,22 +16,34 @@ public class RecipeGUI : MonoBehaviour, IPointerEnterHandler, IPointerExitHandle
     [SerializeField] private GameObject potionItem;
     [SerializeField] private GameObject nameText;
     [SerializeField] private GameObject timeText;
+    private bool open;
+
+    private GameObject gameManager;
+
     void Start()
     {
+        gameManager = GameObject.FindGameObjectWithTag("GameManager");
         animator = GetComponent<Animator>();
     }
     // Use this for initialization
     
 	
 
-    public void OnPointerEnter(PointerEventData eventData)
+    public void OnPointerDown(PointerEventData eventData)
     {
-        animator.SetBool("MouseOver", true);
-    }
-
-    public void OnPointerExit(PointerEventData eventData)
-    {
-        animator.SetBool("MouseOver", false);
+        if (gameManager.GetComponent<GameManager>().Unpaused)
+        {
+            if (open)
+            {
+                animator.SetBool("MouseOver", false);
+                open = false;
+            }
+            else
+            {
+                animator.SetBool("MouseOver", true);
+                open = true;
+            }
+        }
     }
 
     public SO_Potion Potion
