@@ -32,6 +32,7 @@ public class Cauldron : MonoBehaviour
     [SerializeField] private ParticleSystem bubbleLevitation;
     [SerializeField] private ParticleSystem bubbleMetamorphose;
     [SerializeField] private GameObject bubbleSpawner;
+    private ParticleSystem currentBubbleParticule;
 
 
     void Start ()
@@ -74,7 +75,7 @@ public class Cauldron : MonoBehaviour
             if (recipeSucessfulIndex > -1)
             {
                 recipeTime = recipeArray[recipeSucessfulIndex].CookingTime;
-                StartCoroutine(Cooking());
+                StartCoroutine(Cooking(recipeArray[recipeSucessfulIndex].PotionCauldron));
                 sandGlassAnimator.SetFloat("Speed", 1/recipeTime);
             }
         }
@@ -89,18 +90,14 @@ public class Cauldron : MonoBehaviour
 	        if (container.CurrentContainObjectType[0].name == "PotionInvisibility")
 	        {
 	            spriteRenderer.sprite = fillInvisibility;
-
             }
 	        else if (container.CurrentContainObjectType[0].name == "PotionLevitation")
 	        {
 	            spriteRenderer.sprite = fillLevitation;
-
             }
 	        else if (container.CurrentContainObjectType[0].name == "PotionMetamorphose")
 	        {
 	            spriteRenderer.sprite = fillMetamorphose;
-
-	            Instantiate(bubbleMetamorphose, bubbleSpawner.transform);
             }
 	        else
 	        {
@@ -124,14 +121,24 @@ public class Cauldron : MonoBehaviour
         }
     }
 
-    IEnumerator Cooking()
+    IEnumerator Cooking(Sprite potion)
     {
-
-        Instantiate(bubbleInvisibility, bubbleSpawner.transform);
+        if (potion.name == "PotionInvisibility")
+        {
+            currentBubbleParticule = Instantiate(bubbleInvisibility, bubbleSpawner.transform);
+        }
+        else if (potion.name == "PotionLevitation")
+        {
+            currentBubbleParticule = Instantiate(bubbleLevitation, bubbleSpawner.transform);
+        }
+        else if (potion.name == "PotionMetamorphose")
+        {
+            currentBubbleParticule = Instantiate(bubbleMetamorphose, bubbleSpawner.transform);
+        }
         yield return new WaitForSeconds(recipeTime);
         container.CurrentContainObjectType.Add(recipeArray[recipeSucessfulIndex].PotionCauldron);
         cooking = false;
-
+        Destroy(currentBubbleParticule);
         sandGlassAnimator.SetFloat("Speed", 0);
     }
 
