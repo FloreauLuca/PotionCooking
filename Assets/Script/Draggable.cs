@@ -34,7 +34,7 @@ public class Draggable : MonoBehaviour
     protected SpriteRenderer spriteRenderer;
 
 
-    private Animator animator;
+    protected Animator animator;
 
 
     [SerializeField]

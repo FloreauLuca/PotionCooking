@@ -34,6 +34,8 @@ public class Cauldron : MonoBehaviour
     [SerializeField] private GameObject bubbleSpawner;
     private ParticleSystem currentBubbleParticule;
 
+    private AudioSource audioSource;
+    [SerializeField] private AudioClip bubblesAudioClip;
 
     void Start ()
     {
@@ -43,6 +45,7 @@ public class Cauldron : MonoBehaviour
         }
         container = GetComponent<Container>();
         emptySprite = spriteRenderer.sprite;
+        audioSource = GetComponent<AudioSource>();
     }
 	
 	// Update is called once per frame
@@ -83,7 +86,7 @@ public class Cauldron : MonoBehaviour
 	    {
 	        item[i].GetComponentInChildren<SpriteRenderer>().sprite = container.CurrentContainObjectType[i];
         }
-        Debug.Log(container.CurrentContainObjectType.Any());
+        //Debug.Log(container.CurrentContainObjectType.Any());
 	    if (container.CurrentContainObjectType.Any())
 	    {
 
@@ -120,6 +123,7 @@ public class Cauldron : MonoBehaviour
             item[i].GetComponentInChildren<SpriteRenderer>().sprite = null;
         }
     }
+    
 
     IEnumerator Cooking(Sprite potion)
     {
@@ -135,10 +139,14 @@ public class Cauldron : MonoBehaviour
         {
             currentBubbleParticule = Instantiate(bubbleMetamorphose, bubbleSpawner.transform);
         }
+
+        audioSource.clip = bubblesAudioClip;
+        audioSource.Play();
         yield return new WaitForSeconds(recipeTime);
         container.CurrentContainObjectType.Add(recipeArray[recipeSucessfulIndex].PotionCauldron);
         cooking = false;
         Destroy(currentBubbleParticule);
+        audioSource.Stop();
         sandGlassAnimator.SetFloat("Speed", 0);
     }
 
