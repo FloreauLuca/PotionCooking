@@ -23,6 +23,11 @@ public class Customer : MonoBehaviour
     private AudioSource audioSource;
     [SerializeField] private AudioClip[] drinkAudioClip;
     [SerializeField] private AudioClip badReception;
+
+    [SerializeField] private GameObject frustrationBar;
+    [SerializeField] private GameObject potionBubbleSprite;
+    [SerializeField] private GameObject bubbleGameObject;
+
     public SO_Potion Potion
     {
         get { return potion; }
@@ -52,7 +57,8 @@ public class Customer : MonoBehaviour
         {
             currentAskWaiting += Time.deltaTime;
 
-            GetComponentInChildren<SpriteRenderer>().color = Color.white - Color.cyan * (currentAskWaiting / waitingLimit) + Color.black;
+            GetComponentInChildren<SpriteRenderer>().color = Color.white - Color.cyan * (currentAskWaiting / askWaitingLimit) + Color.black;
+            frustrationBar.GetComponent<SpriteRenderer>().size = new Vector2(frustrationBar.GetComponent<SpriteRenderer>().size.x,(currentAskWaiting/ askWaitingLimit)*1.575f);
         }
 
         if (currentWaiting > waitingLimit || currentAskWaiting > askWaitingLimit)
@@ -74,6 +80,8 @@ public class Customer : MonoBehaviour
             parent = transform.parent.gameObject;
             parent.GetComponent<WaitingLine>().Customers.Add(gameObject);
             parent.GetComponent<WaitingLine>().LineOrganization();
+            bubbleGameObject.SetActive(true);
+            potionBubbleSprite.GetComponent<SpriteRenderer>().sprite = potion.CurrentPotionCup;
         }
     }
 

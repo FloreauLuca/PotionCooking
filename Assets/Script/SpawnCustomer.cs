@@ -7,7 +7,6 @@ public class SpawnCustomer : MonoBehaviour {
     [SerializeField] private GameObject[] customersPrefab;
     [SerializeField] private SO_Potion[] potionPrefab;
     [SerializeField] private WaitingLine waitingLine;
-
     [SerializeField] private float timeBetweenCustomer;
 
     [SerializeField] private int totalNumberCustomer;
@@ -22,6 +21,10 @@ public class SpawnCustomer : MonoBehaviour {
     void Start () {
         gameManager = GameObject.FindGameObjectWithTag("GameManager");
         StartCoroutine(WaitAndSummon());
+        foreach (SO_Potion recipe in potionPrefab)
+        {
+            recipe.CurrentPotionCup = recipe.PotionCupSprites[Random.Range(0, recipe.PotionCupSprites.Length)];
+        }
     }
 	
 	// Update is called once per frame

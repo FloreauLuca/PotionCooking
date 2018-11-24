@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Name: Levitaion
   m_EditorClassIdentifier: 
   recipe:
-  - {fileID: 21300000, guid: 241f675849aeaaa4ba5e672a7b73c9a5, type: 3}
+  - {fileID: 21300000, guid: 9b3b6b5af05bf6a4abbafe3e996130f3, type: 3}
   - {fileID: 21300000, guid: 5dbcb2412712a5d4995d659abf16e2cd, type: 3}
   - {fileID: 21300000, guid: 0ad119dcec6d0f841be720b6f0ff64b4, type: 3}
   potionCupSprites:

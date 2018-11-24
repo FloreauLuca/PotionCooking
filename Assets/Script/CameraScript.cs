@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using Cinemachine;
 using UnityEngine;
 
@@ -18,6 +19,8 @@ public class CameraScript : MonoBehaviour {
     private CinemachineVirtualCamera cinemachine;
 
     private int uiButtonId = 0;
+
+    [SerializeField] private GameObject[] signText;
 
     public int UiButtonId
     {
@@ -46,6 +49,11 @@ public class CameraScript : MonoBehaviour {
         {
             currentWindow = WindowType.INGREDIENT;
             transform.position = new Vector3(0f, 0f, -10f);
+            foreach (GameObject text in signText)
+            {
+                text.GetComponent<TextMeshProUGUI>().color = Color.black;
+            }
+            signText[UiButtonId - 1].GetComponent<TextMeshProUGUI>().color = Color.white;
             uiButtonId = 0;
         }
 
@@ -53,6 +61,11 @@ public class CameraScript : MonoBehaviour {
         {
             currentWindow = WindowType.BAKING;
             transform.position = new Vector3(6.75f, 0f, -10f);
+            foreach (GameObject text in signText)
+            {
+                text.GetComponent<TextMeshProUGUI>().color = Color.black;
+            }
+            signText[UiButtonId - 1].GetComponent<TextMeshProUGUI>().color = Color.white;
             uiButtonId = 0;
         }
 
@@ -60,6 +73,11 @@ public class CameraScript : MonoBehaviour {
         {
             currentWindow = WindowType.PRESENTATION;
             transform.position = new Vector3(13.5f, 0f, -10f);
+            foreach (GameObject text in signText)
+            {
+                text.GetComponent<TextMeshProUGUI>().color = Color.black;
+            }
+            signText[UiButtonId - 1].GetComponent<TextMeshProUGUI>().color = Color.white;
             uiButtonId = 0;
         }
 
@@ -67,6 +85,11 @@ public class CameraScript : MonoBehaviour {
         {
             currentWindow = WindowType.HOME;
             transform.position = new Vector3(20.25f, 0f, -10f);
+            foreach (GameObject text in signText)
+            {
+                text.GetComponent<TextMeshProUGUI>().color = Color.black;
+            }
+            signText[UiButtonId - 1].GetComponent<TextMeshProUGUI>().color = Color.white;
             uiButtonId = 0;
         }
 
@@ -83,24 +106,32 @@ public class CameraScript : MonoBehaviour {
                 {
                     currentWindow = WindowType.INGREDIENT;
                     transform.position = new Vector3(0f, 0f, -10f);
+                    signText[0].GetComponent<TextMeshProUGUI>().color = Color.white;
+                    signText[3].GetComponent<TextMeshProUGUI>().color = Color.black;
                     break;
                 }
             case WindowType.INGREDIENT:
                 {
                     currentWindow = WindowType.BAKING;
                     transform.position = new Vector3(6.75f, 0f, -10f);
+                    signText[1].GetComponent<TextMeshProUGUI>().color = Color.white;
+                    signText[0].GetComponent<TextMeshProUGUI>().color = Color.black;
                     break;
                 }
             case WindowType.BAKING:
                 {
                     currentWindow = WindowType.PRESENTATION;
                     transform.position = new Vector3(13.5f, 0f, -10f);
+                    signText[2].GetComponent<TextMeshProUGUI>().color = Color.white;
+                    signText[1].GetComponent<TextMeshProUGUI>().color = Color.black;
                     break;
                 }
             case WindowType.PRESENTATION:
                 {
                     currentWindow = WindowType.HOME;
                     transform.position = new Vector3(20.25f, 0f, -10f);
+                    signText[3].GetComponent<TextMeshProUGUI>().color = Color.white;
+                    signText[2].GetComponent<TextMeshProUGUI>().color = Color.black;
                     break;
                 }
         }
@@ -115,24 +146,32 @@ public class CameraScript : MonoBehaviour {
                 {
                     currentWindow = WindowType.HOME;
                     transform.position = new Vector3(20.25f, 0f, -10f);
+                    signText[3].GetComponent<TextMeshProUGUI>().color = Color.white;
+                    signText[0].GetComponent<TextMeshProUGUI>().color = Color.black;
                     break;
                 }
             case WindowType.BAKING:
                 {
                     currentWindow = WindowType.INGREDIENT;
                     transform.position = new Vector3(0f, 0f, -10f);
+                    signText[0].GetComponent<TextMeshProUGUI>().color = Color.white;
+                    signText[1].GetComponent<TextMeshProUGUI>().color = Color.black;
                     break;
                 }
             case WindowType.PRESENTATION:
                 {
                     currentWindow = WindowType.BAKING;
                     transform.position = new Vector3(6.75f, 0f, -10f);
+                    signText[1].GetComponent<TextMeshProUGUI>().color = Color.white;
+                    signText[2].GetComponent<TextMeshProUGUI>().color = Color.black;
                     break;
                 }
             case WindowType.HOME:
                 {
                     currentWindow = WindowType.PRESENTATION;
                     transform.position = new Vector3(13.5f, 0f, -10f);
+                    signText[2].GetComponent<TextMeshProUGUI>().color = Color.white;
+                    signText[3].GetComponent<TextMeshProUGUI>().color = Color.black;
                     break;
                 }
         }
