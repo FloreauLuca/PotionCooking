@@ -21,10 +21,6 @@ public class SpawnCustomer : MonoBehaviour {
     void Start () {
         gameManager = GameObject.FindGameObjectWithTag("GameManager");
         StartCoroutine(WaitAndSummon());
-        foreach (SO_Potion recipe in potionPrefab)
-        {
-            recipe.CurrentPotionCup = recipe.PotionCupSprites[Random.Range(0, recipe.PotionCupSprites.Length)];
-        }
     }
 	
 	// Update is called once per frame

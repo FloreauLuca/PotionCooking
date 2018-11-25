@@ -15,6 +15,14 @@ public class RecipeGUI : MonoBehaviour, IPointerDownHandler
 
     [SerializeField] private GameObject potionItem;
     [SerializeField] private GameObject nameText;
+
+    private Sprite currentPotionCup;
+
+    public Sprite CurrentPotionCup
+    {
+        get { return currentPotionCup; }
+        set { currentPotionCup = value; }
+    }
     //[SerializeField] private GameObject timeText;
     private bool open;
 
@@ -56,7 +64,7 @@ public class RecipeGUI : MonoBehaviour, IPointerDownHandler
             {
                 ingredientItem[i].GetComponent<Image>().sprite = potion.Recipe[i];
             }
-            potionItem.GetComponent<Image>().sprite = potion.CurrentPotionCup;
+            potionItem.GetComponent<Image>().sprite = currentPotionCup;
             nameText.GetComponent<TextMeshProUGUI>().text = potion.PotionName;
             //timeText.GetComponent<TextMeshProUGUI>().text = "Time : " + potion.CookingTime.ToString();
         }

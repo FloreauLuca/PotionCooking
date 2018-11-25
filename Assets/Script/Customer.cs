@@ -11,7 +11,7 @@ public class Customer : MonoBehaviour
     private GameObject currentRecipe;
     private Container container;
     private GameObject gameManager;
-
+    private Sprite currentPotionCup;
     private float currentWaiting = 0;
     [SerializeField] private float waitingLimit;
 
@@ -43,6 +43,7 @@ public class Customer : MonoBehaviour
         parent.GetComponent<WaitingLine>().LineOrganization();
         commandePanel = GameObject.Find("OrderPanel");
         audioSource = GetComponent<AudioSource>();
+        currentPotionCup = potion.PotionCupSprites[Random.Range(0, potion.PotionCupSprites.Length)];
     }
 
     private void Update()
@@ -72,7 +73,9 @@ public class Customer : MonoBehaviour
         if (!welcomed && gameManager.GetComponent<GameManager>().Unpaused)
         {
             currentRecipe = Instantiate(potion.PanelPrefab, commandePanel.transform);
+            currentRecipe.GetComponent<RecipeGUI>().CurrentPotionCup = currentPotionCup;
             currentRecipe.GetComponent<RecipeGUI>().Potion = potion;
+
             welcomed = true;
             parent.GetComponent<WaitingLine>().Customers.Remove(gameObject);
             parent.GetComponent<WaitingLine>().LineOrganization();
@@ -81,14 +84,14 @@ public class Customer : MonoBehaviour
             parent.GetComponent<WaitingLine>().Customers.Add(gameObject);
             parent.GetComponent<WaitingLine>().LineOrganization();
             bubbleGameObject.SetActive(true);
-            potionBubbleSprite.GetComponent<SpriteRenderer>().sprite = potion.CurrentPotionCup;
+            potionBubbleSprite.GetComponent<SpriteRenderer>().sprite = currentPotionCup;
         }
     }
 
     public void Reception(Sprite cupSprite)
     {
         //Debug.Log("Reception");
-        if (container.GetComponent<Container>().CurrentContainObjectType[0] == potion.PotionCauldron && welcomed && cupSprite == potion.CurrentPotionCup)
+        if (container.GetComponent<Container>().CurrentContainObjectType[0] == potion.PotionCauldron && welcomed && cupSprite == currentPotionCup)
         {
             parent.GetComponent<WaitingLine>().Customers.Remove(gameObject);
             parent.GetComponent<WaitingLine>().LineOrganization();
