@@ -22,6 +22,11 @@ public class Container : MonoBehaviour {
             }
         }
 
+        if (gameObject.tag == "Cup")
+        {
+            currentContainObjectType = new List<Sprite>();
+        }
+
         currentContainObjectType.AddRange(objectType);
     }
 

@@ -20,7 +20,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 9a04222ac5b5b5f4281d55196b35ed08, type: 3}
   - {fileID: 21300000, guid: 184b91a4cc51b9940ab9f6866598474e, type: 3}
   - {fileID: 21300000, guid: 4d9a4ea2dd71102439706604d82b3656, type: 3}
-  potionName: "Potion de M\xE9tamorphose"
+  potionName: Potion de Metamorphose
   panelPrefab: {fileID: 1340855839452064, guid: 30c98e51cae8fff42b3be9e124ea9724,
     type: 2}
   potionCauldron: {fileID: 21300000, guid: 64acf78de21a3b4488c83009ba4f4d9f, type: 3}

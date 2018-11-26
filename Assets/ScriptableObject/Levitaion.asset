@@ -20,7 +20,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: be8800e04e083f34fb633fc0a03805d7, type: 3}
   - {fileID: 21300000, guid: 7f5e24185692f8b43bc3516ae94471cc, type: 3}
   - {fileID: 21300000, guid: b3a3efd307e2d264683f360bb5ed26e9, type: 3}
-  potionName: "Potion de L\xE9vitaion"
+  potionName: Potion de Levitaion
   panelPrefab: {fileID: 1340855839452064, guid: 30c98e51cae8fff42b3be9e124ea9724,
     type: 2}
   potionCauldron: {fileID: 21300000, guid: 67d2fe9f6616e9a418a443be115c1fc2, type: 3}

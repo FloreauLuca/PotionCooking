@@ -21,7 +21,7 @@ public class CameraScript : MonoBehaviour {
     private int uiButtonId = 0;
 
     [SerializeField] private GameObject[] signText;
-
+    private GameObject gameManager;
     public int UiButtonId
     {
         get { return uiButtonId; }
@@ -30,72 +30,76 @@ public class CameraScript : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-
+        gameManager = GameObject.FindGameObjectWithTag("GameManager");
         currentWindow = WindowType.HOME;
         cinemachine = GetComponent<CinemachineVirtualCamera>();
     }
 	
 	// Update is called once per frame
 	void Update () {
+	    if (gameManager.GetComponent<GameManager>().Unpaused)
+	    {
+	        if (Input.GetButtonDown("Space"))
+	        {
+	            Switch();
+	        }
 
 
-        if (Input.GetButtonDown("Space"))
-        {
-            Switch();
-        }
+	        if (Input.GetButtonDown("First") || UiButtonId == 1)
+	        {
+	            currentWindow = WindowType.INGREDIENT;
+	            transform.position = new Vector3(0f, 0f, -10f);
+	            foreach (GameObject text in signText)
+	            {
+	                text.GetComponent<TextMeshProUGUI>().color = Color.black;
+	            }
 
+	            signText[0].GetComponent<TextMeshProUGUI>().color = Color.white;
+	            uiButtonId = 0;
+	        }
 
-        if (Input.GetButtonDown("First") || UiButtonId == 1)
-        {
-            currentWindow = WindowType.INGREDIENT;
-            transform.position = new Vector3(0f, 0f, -10f);
-            foreach (GameObject text in signText)
-            {
-                text.GetComponent<TextMeshProUGUI>().color = Color.black;
-            }
-            signText[0].GetComponent<TextMeshProUGUI>().color = Color.white;
-            uiButtonId = 0;
-        }
+	        if (Input.GetButtonDown("Second") || UiButtonId == 2)
+	        {
+	            currentWindow = WindowType.BAKING;
+	            transform.position = new Vector3(6.75f, 0f, -10f);
+	            foreach (GameObject text in signText)
+	            {
+	                text.GetComponent<TextMeshProUGUI>().color = Color.black;
+	            }
 
-        if (Input.GetButtonDown("Second") || UiButtonId == 2)
-        {
-            currentWindow = WindowType.BAKING;
-            transform.position = new Vector3(6.75f, 0f, -10f);
-            foreach (GameObject text in signText)
-            {
-                text.GetComponent<TextMeshProUGUI>().color = Color.black;
-            }
-            signText[1].GetComponent<TextMeshProUGUI>().color = Color.white;
-            uiButtonId = 0;
-        }
+	            signText[1].GetComponent<TextMeshProUGUI>().color = Color.white;
+	            uiButtonId = 0;
+	        }
 
-        if (Input.GetButtonDown("Third") || UiButtonId == 3)
-        {
-            currentWindow = WindowType.PRESENTATION;
-            transform.position = new Vector3(13.5f, 0f, -10f);
-            foreach (GameObject text in signText)
-            {
-                text.GetComponent<TextMeshProUGUI>().color = Color.black;
-            }
-            signText[2].GetComponent<TextMeshProUGUI>().color = Color.white;
-            uiButtonId = 0;
-        }
+	        if (Input.GetButtonDown("Third") || UiButtonId == 3)
+	        {
+	            currentWindow = WindowType.PRESENTATION;
+	            transform.position = new Vector3(13.5f, 0f, -10f);
+	            foreach (GameObject text in signText)
+	            {
+	                text.GetComponent<TextMeshProUGUI>().color = Color.black;
+	            }
 
-        if (Input.GetButtonDown("Four") || UiButtonId == 4)
-        {
-            currentWindow = WindowType.HOME;
-            transform.position = new Vector3(20.25f, 0f, -10f);
-            foreach (GameObject text in signText)
-            {
-                text.GetComponent<TextMeshProUGUI>().color = Color.black;
-            }
-            signText[3].GetComponent<TextMeshProUGUI>().color = Color.white;
-            uiButtonId = 0;
-        }
+	            signText[2].GetComponent<TextMeshProUGUI>().color = Color.white;
+	            uiButtonId = 0;
+	        }
 
+	        if (Input.GetButtonDown("Four") || UiButtonId == 4)
+	        {
+	            currentWindow = WindowType.HOME;
+	            transform.position = new Vector3(20.25f, 0f, -10f);
+	            foreach (GameObject text in signText)
+	            {
+	                text.GetComponent<TextMeshProUGUI>().color = Color.black;
+	            }
 
+	            signText[3].GetComponent<TextMeshProUGUI>().color = Color.white;
+	            uiButtonId = 0;
+	        }
 
-    }
+	    }
+
+	}
 
     public void Switch()
     {
