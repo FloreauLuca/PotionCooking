@@ -16,7 +16,6 @@ public class SpawnCustomer : MonoBehaviour {
     private int currentNumberCustomer = 0;
     private int servedCustomer = 0;
     private int unservedCustomer = 0;
-
     // Use this for initialization
     void Start () {
         gameManager = GameObject.FindGameObjectWithTag("GameManager");
@@ -30,8 +29,6 @@ public class SpawnCustomer : MonoBehaviour {
 	    {
 	        gameManager.GetComponent<GameManager>().End(servedCustomer, totalNumberCustomer);
 	    }
-
-
     }
 
     public void SpawnCustomers()
@@ -43,12 +40,11 @@ public class SpawnCustomer : MonoBehaviour {
 
     IEnumerator WaitAndSummon()
     {
-        SpawnCustomers();
-        currentNumberCustomer++;
-        yield return new WaitForSeconds(timeBetweenCustomer);
-        if (currentNumberCustomer < totalNumberCustomer)
-        {
-            StartCoroutine(WaitAndSummon());
+        while (currentNumberCustomer < totalNumberCustomer)
+        { 
+            SpawnCustomers();
+            currentNumberCustomer++;
+            yield return new WaitForSeconds(timeBetweenCustomer);
         }
     }
 
