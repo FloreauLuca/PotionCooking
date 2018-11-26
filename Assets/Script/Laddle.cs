@@ -29,7 +29,7 @@ public class Laddle : Draggable
         container.GetComponent<Cup>().Fill(ObjectType[0]);
         transform.position = starTransform;
 
-        cauldron.SetContainerNull();
+        //cauldron.SetContainerNull();
     }
     
     void OnMouseDown()

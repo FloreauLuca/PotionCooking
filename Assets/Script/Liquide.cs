@@ -19,7 +19,6 @@ public class Liquide : Draggable{
 
     public override void Drop(GameObject container)
     {
-
         base.Drop(container);
         animator.SetTrigger("Pouring");
         transform.position = starTransform;

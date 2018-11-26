@@ -58,7 +58,7 @@ public class GlobalGameManager : MonoBehaviour
 
     private static GlobalGameManager instance;
     // Use this for initialization
-    void Awake()
+    void Start()
     {
         if (instance == null)
         {
@@ -86,7 +86,7 @@ public class GlobalGameManager : MonoBehaviour
     public void Quit()
     {
         Application.Quit();
-        //EditorApplication.isPlaying = false;
+        EditorApplication.isPlaying = false;
     }
 
     void ApplyOptions()

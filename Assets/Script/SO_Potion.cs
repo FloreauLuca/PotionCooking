@@ -9,7 +9,7 @@ public class SO_Potion : ScriptableObject
     [SerializeField] private Sprite[] recipe;
 
     [SerializeField] private Sprite[] potionCupSprites;
-    private Sprite currentPotionCup;
+    //private Sprite currentPotionCup;
 
     [SerializeField] private string potionName;
     [SerializeField] private GameObject panelPrefab;
@@ -21,7 +21,6 @@ public class SO_Potion : ScriptableObject
     public int CookingTime
     {
         get { return cookingTime; }
-        set { cookingTime = value; }
     }
 
     public Sprite PotionCauldron
@@ -39,11 +38,11 @@ public class SO_Potion : ScriptableObject
         get { return potionCupSprites; }
     }
 
-    public Sprite CurrentPotionCup
+    /*public Sprite CurrentPotionCup
     {
         get { return currentPotionCup; }
         set { currentPotionCup = value; }
-    }
+    }*/
 
     public string PotionName
     {
