@@ -56,16 +56,21 @@ public class GlobalGameManager : MonoBehaviour
         set { sensitivity = value; }
     }
 
+    private static GlobalGameManager instance;
     // Use this for initialization
-    void Start () {
-        foreach (GameObject globalGameManager in GameObject.FindGameObjectsWithTag("GlobalGameManager"))
+    void Start()
+    {
+        if (instance == null)
         {
-            if (globalGameManager != gameObject)
-                Destroy(gameObject);
+            instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else if (instance != this)
+        {
+            Destroy(gameObject);
+            return;
         }
         ApplyOptions();
-		DontDestroyOnLoad(gameObject);
-
     }
 	
 	// Update is called once per frame
@@ -81,7 +86,7 @@ public class GlobalGameManager : MonoBehaviour
     public void Quit()
     {
         Application.Quit();
-        //EditorApplication.isPlaying = false;
+        EditorApplication.isPlaying = false;
     }
 
     void ApplyOptions()

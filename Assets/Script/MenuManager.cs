@@ -6,8 +6,6 @@ using UnityEngine.SceneManagement;
 
 public class MenuManager : MonoBehaviour
 {
-
-    [SerializeField] private GameObject optionsCanvas;
     [SerializeField] private GameObject mainMenuCanvas;
 
     [SerializeField] private GameObject creditCanvas;
@@ -16,7 +14,6 @@ public class MenuManager : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-
         Time.timeScale = 1;
         globalGameManager = GameObject.FindGameObjectWithTag("GlobalGameManager").GetComponent<GlobalGameManager>();
     }
@@ -44,8 +41,12 @@ public class MenuManager : MonoBehaviour
 
     public void BackButton()
     {
-        optionsCanvas.SetActive(false);
         creditCanvas.SetActive(false);
         mainMenuCanvas.SetActive(true);
+    }
+
+    public void QuitButton()
+    {
+        globalGameManager.Quit();
     }
 }

@@ -36,13 +36,14 @@ public class Cauldron : MonoBehaviour
 
     private AudioSource audioSource;
     [SerializeField] private AudioClip bubblesAudioClip;
+    private bool locked = false;
 
+    public bool Locked
+    {
+        get { return locked; }
+    }
     void Start ()
     {
-        foreach (SO_Potion recipe in recipeArray)
-        {
-            recipe.CurrentPotionCup = recipe.PotionCupSprites[Random.Range(0, recipe.PotionCupSprites.Length)];
-        }
         container = GetComponent<Container>();
         emptySprite = spriteRenderer.sprite;
         audioSource = GetComponent<AudioSource>();
@@ -50,7 +51,7 @@ public class Cauldron : MonoBehaviour
 	
 	// Update is called once per frame
 	void Update () {
-	    if (container.CurrentContainObjectType.Count == RECIPE_ARRAY_LENGTH)
+	    if (container.CurrentContainObjectType.Count == RECIPE_ARRAY_LENGTH && !locked)
 	    {
 	        recipeSucessfulIndex = -1;
 	        for (int recipeIndex = 0; recipeIndex < recipeArray.Length; recipeIndex++)
@@ -82,32 +83,38 @@ public class Cauldron : MonoBehaviour
                 sandGlassAnimator.SetFloat("Speed", 1/recipeTime);
             }
         }
-	    for (int i = 0; i < container.CurrentContainObjectType.Count; i++)
+
+	    if (container.CurrentContainObjectType.Count < 3)
 	    {
-	        item[i].GetComponentInChildren<SpriteRenderer>().sprite = container.CurrentContainObjectType[i];
-        }
-        //Debug.Log(container.CurrentContainObjectType.Any());
+	        for (int i = 0; i < container.CurrentContainObjectType.Count; i++)
+	        {
+	            item[i].GetComponentInChildren<SpriteRenderer>().sprite = container.CurrentContainObjectType[i];
+	        }
+	    }
+
+	    //Debug.Log(container.CurrentContainObjectType.Any());
 	    if (container.CurrentContainObjectType.Any())
 	    {
 
 	        if (container.CurrentContainObjectType[0].name == "PotionInvisibility")
 	        {
+	            locked = true;
 	            spriteRenderer.sprite = fillInvisibility;
-            }
+	        }
 	        else if (container.CurrentContainObjectType[0].name == "PotionLevitation")
 	        {
+	            locked = true;
 	            spriteRenderer.sprite = fillLevitation;
-            }
+	        }
 	        else if (container.CurrentContainObjectType[0].name == "PotionMetamorphose")
 	        {
+	            locked = true;
 	            spriteRenderer.sprite = fillMetamorphose;
-            }
+	        }
 	        else
 	        {
 	            spriteRenderer.sprite = emptySprite;
-
-
-            }
+	        }
 	    }
 	    else
 	    {
@@ -122,8 +129,9 @@ public class Cauldron : MonoBehaviour
         {
             item[i].GetComponentInChildren<SpriteRenderer>().sprite = null;
         }
+        locked = false;
     }
-    
+
 
     IEnumerator Cooking(Sprite potion)
     {
