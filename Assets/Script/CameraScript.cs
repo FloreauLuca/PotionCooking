@@ -53,7 +53,7 @@ public class CameraScript : MonoBehaviour {
             {
                 text.GetComponent<TextMeshProUGUI>().color = Color.black;
             }
-            signText[UiButtonId - 1].GetComponent<TextMeshProUGUI>().color = Color.white;
+            signText[0].GetComponent<TextMeshProUGUI>().color = Color.white;
             uiButtonId = 0;
         }
 
@@ -65,7 +65,7 @@ public class CameraScript : MonoBehaviour {
             {
                 text.GetComponent<TextMeshProUGUI>().color = Color.black;
             }
-            signText[UiButtonId - 1].GetComponent<TextMeshProUGUI>().color = Color.white;
+            signText[1].GetComponent<TextMeshProUGUI>().color = Color.white;
             uiButtonId = 0;
         }
 
@@ -77,7 +77,7 @@ public class CameraScript : MonoBehaviour {
             {
                 text.GetComponent<TextMeshProUGUI>().color = Color.black;
             }
-            signText[UiButtonId - 1].GetComponent<TextMeshProUGUI>().color = Color.white;
+            signText[2].GetComponent<TextMeshProUGUI>().color = Color.white;
             uiButtonId = 0;
         }
 
@@ -89,7 +89,7 @@ public class CameraScript : MonoBehaviour {
             {
                 text.GetComponent<TextMeshProUGUI>().color = Color.black;
             }
-            signText[UiButtonId - 1].GetComponent<TextMeshProUGUI>().color = Color.white;
+            signText[3].GetComponent<TextMeshProUGUI>().color = Color.white;
             uiButtonId = 0;
         }
 

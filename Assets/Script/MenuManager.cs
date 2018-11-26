@@ -44,4 +44,9 @@ public class MenuManager : MonoBehaviour
         creditCanvas.SetActive(false);
         mainMenuCanvas.SetActive(true);
     }
+
+    public void QuitButton()
+    {
+        globalGameManager.Quit();
+    }
 }

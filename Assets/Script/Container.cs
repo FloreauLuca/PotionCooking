@@ -11,13 +11,17 @@ public class Container : MonoBehaviour {
     {
         currentContainObjectType = new List<Sprite>();
     }
-	
-	// Update is called once per frame
-	void Update () {
-	}
 
     public void OnDropObject(List<Sprite> objectType)
     {
+        if (gameObject.tag == "Cauldron")
+        {
+            if (gameObject.GetComponent<Cauldron>().Locked)
+            {
+                gameObject.GetComponent<Cauldron>().SetContainerNull();
+            }
+        }
+
         currentContainObjectType.AddRange(objectType);
     }
 

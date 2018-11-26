@@ -38,6 +38,10 @@ public class Cauldron : MonoBehaviour
     [SerializeField] private AudioClip bubblesAudioClip;
     private bool locked = false;
 
+    public bool Locked
+    {
+        get { return locked; }
+    }
     void Start ()
     {
         container = GetComponent<Container>();
