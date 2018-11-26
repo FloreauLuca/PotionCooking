@@ -86,7 +86,7 @@ public class GlobalGameManager : MonoBehaviour
     public void Quit()
     {
         Application.Quit();
-        EditorApplication.isPlaying = false;
+        //EditorApplication.isPlaying = false;
     }
 
     void ApplyOptions()
