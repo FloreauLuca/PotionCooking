@@ -8,7 +8,13 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     private bool unpaused = true;
-    [SerializeField] private GameObject currentCamera = null;
+    public bool Unpaused
+    {
+        get { return unpaused; }
+        set { unpaused = value; }
+    }
+
+    [SerializeField] private GameObject currentCamera;
 
     [SerializeField] private GameObject canvasPause;
     [SerializeField] private GameObject canvasWin;
@@ -17,12 +23,6 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject winText;
 
     private GlobalGameManager globalGameManager;
-
-    public bool Unpaused
-    {
-        get { return unpaused; }
-        set { unpaused = value; }
-    }
 
     // Use this for initialization
     void Start()
@@ -51,7 +51,6 @@ public class GameManager : MonoBehaviour
 
     public void End(int servedCustomer, int totalNumberCustomer)
     {
-        //Debug.Log("End");
         canvasWin.SetActive(true);
         scoreText.GetComponent<TextMeshProUGUI>().text = "Score : " + servedCustomer + " / " + totalNumberCustomer;
         if (servedCustomer*2 >= totalNumberCustomer)

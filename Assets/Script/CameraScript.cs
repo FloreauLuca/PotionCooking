@@ -5,6 +5,7 @@ using Cinemachine;
 using UnityEngine;
 
 public class CameraScript : MonoBehaviour {
+
     public enum WindowType
     {
         HOME,
@@ -13,26 +14,23 @@ public class CameraScript : MonoBehaviour {
         PRESENTATION
     };
 
-
     private WindowType currentWindow;
 
-    private CinemachineVirtualCamera cinemachine;
-
-    private int uiButtonId = 0;
-
-    [SerializeField] private GameObject[] signText;
-    private GameObject gameManager;
+    private int uiButtonId = 0; // Connaitre le bouton appuyer
     public int UiButtonId
     {
         get { return uiButtonId; }
         set { uiButtonId = value; }
     }
 
+    [SerializeField] private GameObject[] signText;
+
+    private GameObject gameManager;
+
     // Use this for initialization
     void Start () {
         gameManager = GameObject.FindGameObjectWithTag("GameManager");
         currentWindow = WindowType.HOME;
-        cinemachine = GetComponent<CinemachineVirtualCamera>();
     }
 	
 	// Update is called once per frame
@@ -103,7 +101,7 @@ public class CameraScript : MonoBehaviour {
 
     public void Switch()
     {
-        //Debug.Log("Switch");
+        
         switch (currentWindow)
         {
             case WindowType.HOME:
@@ -141,9 +139,10 @@ public class CameraScript : MonoBehaviour {
         }
     }
 
+    /*                                Utilisable dans de futur version
     public void SwitchDown()
     {
-        //Debug.Log("SwitchDown");
+        
         switch (currentWindow)
         {
             case WindowType.INGREDIENT:
@@ -179,7 +178,7 @@ public class CameraScript : MonoBehaviour {
                     break;
                 }
         }
-    }
+    }*/
 
 
 }

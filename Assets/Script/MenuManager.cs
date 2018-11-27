@@ -11,16 +11,11 @@ public class MenuManager : MonoBehaviour
     [SerializeField] private GameObject creditCanvas;
 
     private GlobalGameManager globalGameManager;
-    // Use this for initialization
+
     void Start()
     {
         Time.timeScale = 1;
         globalGameManager = GameObject.FindGameObjectWithTag("GlobalGameManager").GetComponent<GlobalGameManager>();
-    }
-
-    // Update is called once per frame
-    void Update () {
-
     }
 
     public void OptionsButton()

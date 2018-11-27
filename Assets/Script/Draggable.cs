@@ -8,6 +8,11 @@ public class Draggable : MonoBehaviour
 {
 
     [SerializeField] private List<Sprite> objectType;
+    public List<Sprite> ObjectType
+    {
+        get { return objectType; }
+        set { objectType = value; }
+    }
 
     [SerializeField] private LayerMask raycastLayerMask;
     protected string containerType;
@@ -16,16 +21,15 @@ public class Draggable : MonoBehaviour
     protected Vector2 starTransform;
 
     private bool dragging = false;
+    public bool Dragging
+    {
+        get { return dragging; }
+        set { dragging = value; }
+    }
 
     private bool table;
 
-    private static int lol;
-
     private GameObject gameManager;
-    
-    
-
-
 
     [SerializeField] private Sprite potionInvisibility;
     [SerializeField] private Sprite potionLevitation;
@@ -33,25 +37,10 @@ public class Draggable : MonoBehaviour
     private Sprite emptyCup;
     protected SpriteRenderer spriteRenderer;
 
-
     protected Animator animator;
 
-
-    [SerializeField]
-    private AudioClip audioClip;
-
-
-    // Use this for initialization
-    public bool Dragging
-    {
-        get { return dragging; }
-        set { dragging = value; }
-    }
-    public List<Sprite> ObjectType
-    {
-        get { return objectType; }
-        set { objectType = value; }
-    }
+    [SerializeField] private AudioClip audioClip;
+    
     protected virtual void Start ()
     {
         gameManager = GameObject.FindGameObjectWithTag("GameManager");
@@ -65,7 +54,6 @@ public class Draggable : MonoBehaviour
         objectType.Add(GetComponentInChildren<SpriteRenderer>().sprite);
     }
     	
-	// Update is called once per frame
 	protected virtual void Update () {
 	    if (container != null)
 	    {
@@ -74,8 +62,6 @@ public class Draggable : MonoBehaviour
 
 	    if (dragging)
 	    {
-
-	        //Debug.Log("yousk2");
 	        Vector3 point = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 	        point.z = 0;
 	        gameObject.transform.position = point;
@@ -86,8 +72,7 @@ public class Draggable : MonoBehaviour
 	    {
 	        bool dropped = false;
 	        dragging = false;
-	        //Debug.Log(transform.position);
-	        Collider2D[] colliders = Physics2D.OverlapBoxAll(transform.position, box.size, 0, raycastLayerMask);
+	        Collider2D[] colliders = Physics2D.OverlapBoxAll((Vector2)transform.position+box.offset, box.size, 0, raycastLayerMask);
 
 	        foreach (Collider2D collider in colliders)
 	        {
@@ -95,7 +80,6 @@ public class Draggable : MonoBehaviour
                 { 
 	                if (collider.tag == containerType)
 	                {
-	                    //Debug.Log(collider);
 	                    collider.GetComponent<Container>().OnDropObject(objectType);
 	                    Drop(collider.gameObject);
 	                    dropped = true;
@@ -119,6 +103,7 @@ public class Draggable : MonoBehaviour
 	        }
 	    }
     }
+
     private void OnMouseDrag()
     {
         if (gameManager.GetComponent<GameManager>().Unpaused)
@@ -135,8 +120,6 @@ public class Draggable : MonoBehaviour
     }
 
     public virtual void DropEmpty() { }
-
-
 
     public void Fill(Sprite potion)
     {

@@ -16,13 +16,12 @@ public class SpawnCustomer : MonoBehaviour {
     private int currentNumberCustomer = 0;
     private int servedCustomer = 0;
     private int unservedCustomer = 0;
-    // Use this for initialization
+
     void Start () {
         gameManager = GameObject.FindGameObjectWithTag("GameManager");
         StartCoroutine(WaitAndSummon());
     }
 	
-	// Update is called once per frame
 	void Update () {
 
 	    if (unservedCustomer + servedCustomer == totalNumberCustomer)
@@ -34,8 +33,6 @@ public class SpawnCustomer : MonoBehaviour {
     public void SpawnCustomers()
     {
         waitingLine.NewCustomer(customersPrefab[Random.Range(0, customersPrefab.Length)], potionPrefab[Random.Range(0, potionPrefab.Length)]);
-        //Debug.Log((customersPrefab.Length));
-        
     }
 
     IEnumerator WaitAndSummon()

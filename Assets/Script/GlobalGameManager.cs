@@ -6,24 +6,9 @@ using UnityEngine.Audio;
 
 public class GlobalGameManager : MonoBehaviour
 {
-    private int option;
-    private bool scroll;
-    private float volumeMusic = 0.5f;
-    private float volumeSound = 0.5f;
-    private float volumeMaster = 0.5f;
-    private float sensitivity;
 
-    [SerializeField] private GameObject optionCanvas;
     [SerializeField] private AudioMixer audioMixer;
-    private GameObject canvasBeforeOptions = null;
-    [SerializeField] private GameObject scrollPanel;
-
-    public bool Scroll
-    {
-        get { return scroll; }
-        set { scroll = value; }
-    }
-
+    private float volumeMusic = 0.5f;
     public float VolumeMusic
     {
         get { return volumeMusic; }
@@ -33,34 +18,56 @@ public class GlobalGameManager : MonoBehaviour
             audioMixer.SetFloat("musicVolume", Mathf.Log(VolumeMusic) * 20);
         }
     }
-
+    private float volumeSound = 0.5f;
     public float VolumeSound
     {
         get { return volumeSound; }
-        set { volumeSound = value;
+        set
+        {
+            volumeSound = value;
             audioMixer.SetFloat("dropObjectSoundVolume", Mathf.Log(VolumeSound) * 20);
         }
     }
-
+    private float volumeMaster = 0.5f;
     public float VolumeMaster
     {
         get { return volumeMaster; }
-        set { volumeMaster = value;
+        set
+        {
+            volumeMaster = value;
             audioMixer.SetFloat("masterVolume", Mathf.Log(VolumeMaster) * 20);
         }
     }
 
+
+    [SerializeField] private GameObject optionCanvas;
+    private GameObject canvasBeforeOptions = null;
+    [SerializeField] private GameObject scrollPanel;
+
+    /*                     Utilisable dans les futurs versions
+    private bool scroll; 
+    public bool Scroll
+    {
+        get { return scroll; }
+        set { scroll = value; }
+    }
+    private float sensitivity;
     public float Sensitivity
     {
         get { return sensitivity; }
         set { sensitivity = value; }
     }
+    
+    public void ScrollUpdate()
+    {
+        scrollPanel.SetActive(Scroll);
+    }*/
 
     private static GlobalGameManager instance;
-    // Use this for initialization
+
     void Start()
     {
-        if (instance == null)
+        if (instance == null) // empeche l'existance de plusieurs GlobalGameManager
         {
             instance = this;
             DontDestroyOnLoad(gameObject);
@@ -73,20 +80,18 @@ public class GlobalGameManager : MonoBehaviour
         ApplyOptions();
     }
 	
-	// Update is called once per frame
 	void Update () {
 	    if (Input.GetButtonDown("Cancel"))
 	    {
 	        Quit();
 	    }
-        //Debug.Log(Random.Range(0,3));
     }
 
 
     public void Quit()
     {
         Application.Quit();
-        EditorApplication.isPlaying = false;
+        //EditorApplication.isPlaying = false;
     }
 
     void ApplyOptions()
@@ -98,10 +103,9 @@ public class GlobalGameManager : MonoBehaviour
 
     public void Options(GameObject currentCanvas)
     {
-            optionCanvas.SetActive(true);
-            currentCanvas.SetActive(false);
-            canvasBeforeOptions = currentCanvas;
-
+        optionCanvas.SetActive(true);
+        currentCanvas.SetActive(false);
+        canvasBeforeOptions = currentCanvas;
     }
 
     public void OptionsButton()
@@ -112,8 +116,4 @@ public class GlobalGameManager : MonoBehaviour
         ApplyOptions();
     }
 
-    public void ScrollUpdate()
-    {
-        scrollPanel.SetActive(Scroll);
-    }
 }
