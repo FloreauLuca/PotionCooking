@@ -7,51 +7,38 @@ using UnityEngine;
 public class SO_Potion : ScriptableObject
 {
     [SerializeField] private Sprite[] recipe;
-
-    [SerializeField] private Sprite[] potionCupSprites;
-    //private Sprite currentPotionCup;
-
-    [SerializeField] private string potionName;
-    [SerializeField] private GameObject panelPrefab;
-
-    [SerializeField] private Sprite potionCauldron;
-
-    [SerializeField] private int cookingTime = 10;
-
-    public int CookingTime
-    {
-        get { return cookingTime; }
-    }
-
-    public Sprite PotionCauldron
-    {
-        get { return potionCauldron; }
-    }
-
     public Sprite[] Recipe
     {
         get { return recipe; }
     }
 
+    [SerializeField] private Sprite[] potionCupSprites;
     public Sprite[] PotionCupSprites
     {
         get { return potionCupSprites; }
     }
 
-    /*public Sprite CurrentPotionCup
-    {
-        get { return currentPotionCup; }
-        set { currentPotionCup = value; }
-    }*/
-
+    [SerializeField] private string potionName;
     public string PotionName
     {
         get { return potionName; }
     }
 
+    [SerializeField] private GameObject panelPrefab;
     public GameObject PanelPrefab
     {
-        get
-        { return panelPrefab;}
+        get { return panelPrefab; }
+    }
+
+    [SerializeField] private Sprite potionCauldron;
+    public Sprite PotionCauldron
+    {
+        get { return potionCauldron; }
+    }
+
+    [SerializeField] private int cookingTime = 10;
+    public int CookingTime
+    {
+        get { return cookingTime; }
     }
 }

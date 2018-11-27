@@ -11,47 +11,47 @@ public class Cauldron : MonoBehaviour
 {
 
     [SerializeField] private SO_Potion[] recipeArray;
+
     private int nbGoodIngredient;
     private int recipeSucessfulIndex = -1;
+
     private Container container;
     [SerializeField] private GameObject[] item;
     private const int RECIPE_ARRAY_LENGTH = 3;
 
+    [SerializeField] private SpriteRenderer spriteRenderer;
     [SerializeField] private Sprite fillInvisibility;
     [SerializeField] private Sprite fillLevitation;
     [SerializeField] private Sprite fillMetamorphose;
     private Sprite emptySprite;
+
     private float recipeTime;
-    private bool cooking = false;
 
     [SerializeField] private Animator sandGlassAnimator;
-
-    [SerializeField] private SpriteRenderer spriteRenderer;
 
     [SerializeField] private ParticleSystem bubbleInvisibility;
     [SerializeField] private ParticleSystem bubbleLevitation;
     [SerializeField] private ParticleSystem bubbleMetamorphose;
     [SerializeField] private GameObject bubbleSpawner;
     private ParticleSystem currentBubbleParticule;
-
     private AudioSource audioSource;
     [SerializeField] private AudioClip bubblesAudioClip;
-    private bool locked = false;
 
+    private bool locked = false; // detecter si le chaudron possède une potion
     public bool Locked
     {
         get { return locked; }
     }
+
     void Start ()
     {
         container = GetComponent<Container>();
         emptySprite = spriteRenderer.sprite;
         audioSource = GetComponent<AudioSource>();
     }
-	
-	// Update is called once per frame
+
 	void Update () {
-	    if (container.CurrentContainObjectType.Count == RECIPE_ARRAY_LENGTH && !locked)
+	    if (container.CurrentContainObjectType.Count == RECIPE_ARRAY_LENGTH && !locked) // si une recette est compléter
 	    {
 	        recipeSucessfulIndex = -1;
 	        for (int recipeIndex = 0; recipeIndex < recipeArray.Length; recipeIndex++)
@@ -71,7 +71,6 @@ public class Cauldron : MonoBehaviour
                 if (nbGoodIngredient == 3)
 	            {
 	                recipeSucessfulIndex = recipeIndex;
-                    Debug.Log("RecipeSucessful");
 	            }
             }
 
@@ -79,21 +78,22 @@ public class Cauldron : MonoBehaviour
             if (recipeSucessfulIndex > -1)
             {
                 recipeTime = recipeArray[recipeSucessfulIndex].CookingTime;
+                locked = true;
                 StartCoroutine(Cooking(recipeArray[recipeSucessfulIndex].PotionCauldron));
                 sandGlassAnimator.SetFloat("Speed", 1/recipeTime);
             }
         }
 
-	    if (container.CurrentContainObjectType.Count < 3)
+
+	    if (container.CurrentContainObjectType.Count < 3) // affichage des ingrédients actuelllement dans le chaudron
 	    {
 	        for (int i = 0; i < container.CurrentContainObjectType.Count; i++)
 	        {
 	            item[i].GetComponentInChildren<SpriteRenderer>().sprite = container.CurrentContainObjectType[i];
 	        }
 	    }
-
-	    //Debug.Log(container.CurrentContainObjectType.Any());
-	    if (container.CurrentContainObjectType.Any())
+        
+	    if (container.CurrentContainObjectType.Any()) // test si il n'est pas vide
 	    {
 
 	        if (container.CurrentContainObjectType[0].name == "PotionInvisibility")
@@ -113,7 +113,7 @@ public class Cauldron : MonoBehaviour
 	        }
 	        else
 	        {
-	            spriteRenderer.sprite = emptySprite;
+                spriteRenderer.sprite = emptySprite;
 	        }
 	    }
 	    else
@@ -150,9 +150,10 @@ public class Cauldron : MonoBehaviour
 
         audioSource.clip = bubblesAudioClip;
         audioSource.Play();
+
         yield return new WaitForSeconds(recipeTime);
+
         container.CurrentContainObjectType.Add(recipeArray[recipeSucessfulIndex].PotionCauldron);
-        cooking = false;
         Destroy(currentBubbleParticule);
         audioSource.Stop();
         sandGlassAnimator.SetFloat("Speed", 0);

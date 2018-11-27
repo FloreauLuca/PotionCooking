@@ -5,19 +5,27 @@ using UnityEngine.UI;
 
 public class Customer : MonoBehaviour
 {
-    [SerializeField] private GameObject commandePanel;
+    private GameObject commandePanel;
+
     [SerializeField] private SO_Potion potion;
-    private bool welcomed = false;
+    public SO_Potion Potion
+    {
+        get { return potion; }
+        set { potion = value; }
+    }
     private GameObject currentRecipe;
-    private Container container;
-    private GameObject gameManager;
     private Sprite currentPotionCup;
+
+    private bool welcomed = false;
+
+    private Container container;
+
+    private GameObject gameManager;
+
     private float currentWaiting = 0;
     [SerializeField] private float waitingLimit;
-
     private float currentAskWaiting = 0;
     [SerializeField] private float askWaitingLimit;
-
     private GameObject parent;
 
     private AudioSource audioSource;
@@ -27,12 +35,6 @@ public class Customer : MonoBehaviour
     [SerializeField] private GameObject frustrationBar;
     [SerializeField] private GameObject potionBubbleSprite;
     [SerializeField] private GameObject bubbleGameObject;
-
-    public SO_Potion Potion
-    {
-        get { return potion; }
-        set { potion = value; }
-    }
 
     private void Start()
     {
@@ -75,7 +77,6 @@ public class Customer : MonoBehaviour
             currentRecipe = Instantiate(potion.PanelPrefab, commandePanel.transform);
             currentRecipe.GetComponent<RecipeGUI>().CurrentPotionCup = currentPotionCup;
             currentRecipe.GetComponent<RecipeGUI>().Potion = potion;
-
             welcomed = true;
             parent.GetComponent<WaitingLine>().Customers.Remove(gameObject);
             parent.GetComponent<WaitingLine>().LineOrganization();
@@ -90,7 +91,7 @@ public class Customer : MonoBehaviour
 
     public void Reception(Sprite cupSprite)
     {
-        //Debug.Log("Reception");
+        
         if (container.GetComponent<Container>().CurrentContainObjectType[0] == potion.PotionCauldron && welcomed && cupSprite == currentPotionCup)
         {
             parent.GetComponent<WaitingLine>().Customers.Remove(gameObject);
@@ -118,10 +119,9 @@ public class Customer : MonoBehaviour
         Destroy(gameObject);
     }
 
-    IEnumerator audioWait()
+    IEnumerator audioWait() // laisser le son se jouer avant la destruction de l'objet
     {
         yield return new WaitForSeconds(1);
-
         Destroy(gameObject);
     }
 

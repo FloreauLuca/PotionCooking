@@ -5,16 +5,15 @@ using UnityEngine;
 
 public class Souris : MonoBehaviour
 {
-
+    // Utilisable dans futurs versions
     [SerializeField] [Range(0, 2)] private float sensitivity = 0.5f;
-	// Use this for initialization
+
 	void Start ()
 	{
 
 	    Cursor.lockState = CursorLockMode.Locked;
 	}
 	
-	// Update is called once per frame
 	void Update () {
 
 	    

@@ -9,21 +9,34 @@ public class RecipeGUI : MonoBehaviour, IPointerDownHandler
 {
     private Animator animator;
 
-    [SerializeField] private SO_Potion potion;
+    private Sprite currentPotionCup;
+    public Sprite CurrentPotionCup
+    {
+        get { return currentPotionCup; }
+        set { currentPotionCup = value; }
+    }
 
     [SerializeField] private GameObject[] ingredientItem;
 
     [SerializeField] private GameObject potionItem;
     [SerializeField] private GameObject nameText;
 
-    private Sprite currentPotionCup;
-
-    public Sprite CurrentPotionCup
+    private SO_Potion potion;
+    public SO_Potion Potion
     {
-        get { return currentPotionCup; }
-        set { currentPotionCup = value; }
+        get { return potion; }
+        set
+        {
+            potion = value;
+            for (int i = 0; i < ingredientItem.Length; i++)
+            {
+                ingredientItem[i].GetComponent<Image>().sprite = potion.Recipe[i];
+            }
+            potionItem.GetComponent<Image>().sprite = currentPotionCup;
+            nameText.GetComponent<TextMeshProUGUI>().text = potion.PotionName;
+        }
     }
-    //[SerializeField] private GameObject timeText;
+
     private bool open;
 
     private GameObject gameManager;
@@ -33,9 +46,6 @@ public class RecipeGUI : MonoBehaviour, IPointerDownHandler
         gameManager = GameObject.FindGameObjectWithTag("GameManager");
         animator = GetComponent<Animator>();
     }
-    // Use this for initialization
-    
-	
 
     public void OnPointerDown(PointerEventData eventData)
     {
@@ -54,19 +64,5 @@ public class RecipeGUI : MonoBehaviour, IPointerDownHandler
         }
     }
 
-    public SO_Potion Potion
-    {
-        get { return potion; }
-        set
-        {
-            potion = value;
-            for (int i = 0; i < ingredientItem.Length; i++)
-            {
-                ingredientItem[i].GetComponent<Image>().sprite = potion.Recipe[i];
-            }
-            potionItem.GetComponent<Image>().sprite = currentPotionCup;
-            nameText.GetComponent<TextMeshProUGUI>().text = potion.PotionName;
-            //timeText.GetComponent<TextMeshProUGUI>().text = "Time : " + potion.CookingTime.ToString();
-        }
-    }
+    
 }
